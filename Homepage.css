@@ -1,0 +1,57 @@
+#Teammeet {
+  color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+}
+
+#Teammeet:hover {
+  color: darkolivegreen;
+}
+
+.container {
+  border: solid blue;
+}
+
+.text {
+  text-align: center;
+}
+
+* {
+  background-color: azure;
+}
+
+#soccer_pic {
+  width: auto;
+  height: auto;
+}
+
+#Log:hover {
+  color: #4caf50;
+}
+
+#Sign:hover {
+  color: red;
+}
+
+.Top_bt {
+  background-color: #008cba;
+  color: white;
+}
+
+#find {
+  color: white;
+  background-color: #008cba;
+  text-decoration: none;
+}
+
+#find:hover {
+  color: red;
+}
+
+/* .col-sm-1 {
+  border: red;
+} */
+
+/* .col-md-6 {
+  border: solid red;
+} */

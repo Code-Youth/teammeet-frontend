@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teameet</title>
+    <link rel='stylesheet' href='Homepage.css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
+    <script src="JSfile.js"></script>
+</head>
+
+
+<body>
+
+    <section class='pagetop fixed-top'>
+        <div class='container-fluid border-bottom'>
+            <div class='row '>
+                <div class="col-sm-1">
+                
+                </div>
+                <div class="col-sm-4" >
+                    <img src="scerch.png" style="max-Width:25px;">
+                    <input id="search_input" oninput="getGames()" class="border rounded-pill" style="width:70%; text-align:center; margin-top:3%;"type="text">
+                </div>
+                <div class='col-sm-2 text-center'>
+                    <a href='Homepage.html' id='Teammeet'>
+                        <h1>Teameet</h1>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                </div>
+                <div class='col-sm-1'>
+                    <button class='Top_bt' id='Log'>Log in</button>
+                </div>
+                <div class='col-sm-1'>
+                    <button class='Top_bt' id='Sign'>Sign up</button>
+                </div>
+                
+
+            </div>
+            <!--end of row1-->
+            <div class='row'>
+                <div class='col-sm-2'>
+                    <a href='FindGame.html'>
+                        <button class='Top_bt'>Find a game</button>
+                    </a>
+                </div>
+                <div class='col-sm-2'>
+                    <a href='Start_Game.html'>
+                        <button class='Top_bt'>Start a game</button>
+                    </a>
+                </div>
+                <div class='col-sm-2'>
+                    <button class='Top_bt'>
+                        <a href='FindGame.html' id='find'>Find a game</a>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <hr>
+
+    <section class='main_body'>
+        <div class='container' style="margin-top:7%">
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class="jumbotron">
+                        <h1 class="display-4">Players needed</h1>
+                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
+                            attention to featured content or information.</p>
+                        <hr class="my-4">
+                        <p>It uses utility classes for typography and spacing to space content out within the larger
+                            container.</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3 id='soccer_title'>Soccer game!</h1>
+                            <h4>We need 5 intermediate players. Please show up on time and don't play rough, it's just
+                                for
+                                fun!</h4>
+                    </div>
+                    <div style="text-align: right;" class="col-md-5 px-0">
+                        <img src="soccer.jpg" id='soccer_pic' class='img-fluid' />
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-2'>
+                        <a class="btn btn-success btn-lg" href="Join match.html" role="button">Join us</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class='jumbotron'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <h3 id='basketball_title'>Basketball match!</h3>
+                        <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
+                            professionaly in college.</h4>
+                        <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
+                    </div>
+
+                    <div class='col-md-6 px-0'>
+                        <img src='basketball.jpg' id='basketball_pic' class='img-fluid'>
+                    </div>
+
+                </div>
+            </div>
+
+    </section>
+
+
+
+</body>
+
+</html>
