@@ -1,7 +1,3 @@
-.table_header {
-  color: red;
-}
-
 #Teammeet {
   color: red;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -13,10 +9,6 @@
 }
 
 .container {
-  border: solid red;
-}
-
-.col-md-6 {
   border: solid blue;
 }
 
@@ -25,15 +17,14 @@
 }
 
 * {
-  background-color: none;
+  background-color: azure;
 }
 
-/*
 #soccer_pic {
   width: auto;
   height: auto;
 }
-*/
+
 #Log:hover {
   color: #4caf50;
 }
