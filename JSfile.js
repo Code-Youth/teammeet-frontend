@@ -1,6 +1,7 @@
 function appendGameCard(movie) {
     let jumbotronDiv = document.createElement("div")
     jumbotronDiv.setAttribute("class", "jumbotron")
+    jumbotronDiv.setAttribute("id")
 
     let containerFluidDiv = document.createElement("div")
     containerFluidDiv.setAttribute("class", "container-fluid")
@@ -62,4 +63,3 @@ function getGames() {
         console.log(error);
     });
 }
-
