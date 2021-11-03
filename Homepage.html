@@ -12,13 +12,13 @@
 </head>
 
 
-<body>
+<body onload="getGames()">
 
     <section class='pagetop'>
         <div class='container-fluid'>
             <div class='row'>
                 <div class='col-sm-10 text-center'>
-                    <a href='/Homepage.html' id='Teammeet'>
+                    <a href='Homepage.html' id='Teammeet'>
                         <h1>Teameet</h1>
                     </a>
                 </div>
@@ -34,18 +34,18 @@
 
             <div class='row'>
                 <div class='col-sm-2'>
-                    <a href='/FindGame.html'>
+                    <a href='FindGame.html'>
                         <button class='Top_bt'>Find a game</button>
                     </a>
                 </div>
                 <div class='col-sm-2'>
-                    <a href='/Start_Game.html'>
+                    <a href='Start_Game.html'>
                         <button class='Top_bt'>Start a game</button>
                     </a>
                 </div>
                 <div class='col-sm-2'>
                     <button class='Top_bt'>
-                        <a href='/FindGame.html' id='find'>Find a game</a>
+                        <a onclick="addGame()" id='find'>Create a game</a>
                     </button>
                 </div>
 
@@ -144,7 +144,7 @@
                             <a class="btn btn-success btn-lg my-5" href="/Join match.html" role="button">Join us</a>
                     </div>
                     <div class="col-md-5">
-                        <img src="/soccer.jpg" id='soccer_pic' class='img-fluid' />
+                        <img src="soccer.jpg" id='soccer_pic' class='img-fluid' />
                     </div>
                 </div>
 
@@ -178,11 +178,11 @@
                         <h3 id='basketball_title'>Basketball match!</h3>
                         <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
                             professionaly in college.</h4>
-                        <a class='btn btn-danger my-5' href='/Join match.html'>Join match</a>
+                        <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
                     </div>
 
                     <div class='col-md-5 px-0'>
-                        <img src='/basketball.jpg' id='basketball_pic' class='img-fluid'>
+                        <img src='basketball.jpg' id='basketball_pic' class='img-fluid'>
                     </div>
 
                 </div>
@@ -225,7 +225,7 @@
                         <a class="btn btn-success btn-lg my-5" href="/Join match.html" role="button">Join us</a>
                 </div>
                 <div class="col-md-5 px-0">
-                    <img src="/soccer.jpg" id='soccer_pic' class='img-fluid' />
+                    <img src="soccer.jpg" id='soccer_pic' class='img-fluid' />
                 </div>
             </div>
             <div class='row'>
@@ -236,11 +236,11 @@
                     <h3 id='basketball_title'>Basketball match!</h3>
                     <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
                         professionaly in college.</h4>
-                    <a class='btn btn-danger my-5' href='/Join match.html'>Join match</a>
+                    <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
                 </div>
 
                 <div class='col-md-5 px-0'>
-                    <img src='/basketball.jpg' id='basketball_pic' class='img-fluid'>
+                    <img src='basketball.jpg' id='basketball_pic' class='img-fluid'>
                 </div>
             </div class='row'>
 
