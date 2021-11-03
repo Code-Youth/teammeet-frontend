@@ -63,4 +63,3 @@ function getGames() {
         console.log(error);
     });
 }
-
