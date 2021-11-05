@@ -42,6 +42,7 @@ function appendGameCard(game) {
 }
 
 
+
 function getGames() {
 
     fetch("https://teammeet-backend-app.azurewebsites.net/api/games")
@@ -61,30 +62,14 @@ function getGames() {
 
 function addGame() {
 
-    let name = prompt("enter your name")
-    let sport = prompt("enter your sport")
-    let skillLevel = prompt("enter your skill level")
-    let description = prompt("enter the games description")
-    let gameSize = prompt("enter the game size")
-    let currentPlayers = prompt("enter the number of players already going")
-    let location = prompt("enter the location")
-    let date = prompt("enter the date of the game")
-    
+    let formElem = document.getElementById("form")
+    let formData = new FormData(formElem)
+    let formJson = JSON.stringify(Object.fromEntries(formData))
 
-    data = {
-        name: name,
-        sport: sport,
-        skillLevel: skillLevel,
-        description: description,
-        gameSize: gameSize,
-        currentPlayers: currentPlayers,
-        location: location,
-        date: date
-    }
 
     fetch("https://teammeet-backend-app.azurewebsites.net/api/games", {
-        method: "POST", 
-        body: JSON.stringify(data)
+        method: "post", 
+        body: formJson
       }).then(res => {
         console.log("Request complete! response:", res);
       });
