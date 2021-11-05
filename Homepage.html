@@ -12,29 +12,22 @@
 </head>
 
 
-<body>
+<body onload="getGames()">
 
-    <section class='pagetop fixed-top'>
-        <div class='container-fluid border-bottom'>
-            <div class='row '>
-                <div class="col-sm-1">
-                
-                </div>
-                <div class="col-sm-4" >
-                    <img src="scerch.png" style="max-Width:25px;">
-                    <input id="search_input" oninput="getGames()" class="border rounded-pill" style="width:70%; text-align:center; margin-top:3%;"type="text" placeholder="Search..">
-                </div>
-                <div class='col-sm-2 text-center'>
+    <section class='pagetop'>
+        <div class='container-fluid'>
+            <div class='row'>
+                <div class='col-sm-10 text-center'>
                     <a href='Homepage.html' id='Teammeet'>
                         <h1>Teameet</h1>
                     </a>
                 </div>
                 <div class="col-sm-5">
 </div>
-                
 
             </div>
             <!--end of row1-->
+
             <div class='row'>
                 <section style="margin-top: -15px;" class='navbar'>
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -98,18 +91,22 @@
     <br>
     <!-- This portion here is the code for the main body of the front page -->
     <section class='main_body'>
-        <div class='container' style="margin-top:7%">
+        <div class='container'>
             <div class='row'>
                 <div class='col-sm-12'>
                     <div class="jumbotron">
-                        <h1 class="display-4">Players needed</h1>
-                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
-                            attention to featured content or information.</p>
+                        <h1 class="display-4">Sport games for adults of all skill levels!</h1>
+                        <p class="lead">Looking to play sports but worried about skill gaps? Here on Teammeet, we
+                            provide
+                            a platform for people of all skill levels to find games and players that suit their athletic
+                            preferences. Some people are looking for a casual experience while others want to play
+                            competitively. You can filter your search options to find the right experience for you!
+
+                        </p>
                         <hr class="my-4">
-                        <p>It uses utility classes for typography and spacing to space content out within the larger
-                            container.</p>
+                        <p>If you would like more information, feel free to contact us.</p>
                         <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Contact</a>
                         </p>
                     </div>
                 </div>
@@ -118,38 +115,80 @@
         <br>
 
         <div class="jumbotron">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
+                    <div class='col-md-2'>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class='table_header'>About</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Skill level: Amatuer</th>
+                                <tr>
+                                    <th scope="row">Current players: 7</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Player needed: 5</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date:10/27/2021</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Location: .....</th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
                     <div class="col-md-5">
                         <h3 id='soccer_title'>Soccer game!</h1>
-                            <h4>We need 5 intermediate players. Please show up on time and don't play rough, it's just
+                            <h4>We need 5 players in a 6v6 match. Please show up on time and don't play rough, it's just
                                 for
                                 fun!</h4>
+                            <a class="btn btn-success btn-lg my-5" href="/Join match.html" role="button">Join us</a>
                     </div>
-                    <div style="text-align: right;" class="col-md-5 px-0">
+                    <div class="col-md-5">
                         <img src="soccer.jpg" id='soccer_pic' class='img-fluid' />
                     </div>
                 </div>
-                <div class='row'>
-                    <div class='col-sm-2'>
-                        <a class="btn btn-success btn-lg" href="Join match.html" role="button">Join us</a>
-                    </div>
 
-                </div>
             </div>
         </div>
 
         <div class='jumbotron'>
             <div class='container'>
                 <div class='row'>
-                    <div class='col-md-6'>
+                    <div class='col-md-2'>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Current Matches</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                <tr>
+                                    <th scope="row">2</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class='col-md-5'>
                         <h3 id='basketball_title'>Basketball match!</h3>
                         <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
                             professionaly in college.</h4>
                         <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
                     </div>
 
-                    <div class='col-md-6 px-0'>
+                    <div class='col-md-5 px-0'>
                         <img src='basketball.jpg' id='basketball_pic' class='img-fluid'>
                     </div>
 
@@ -157,7 +196,69 @@
             </div>
 
     </section>
+    <hr>
 
+    <!-- In this section, I'm testing how the page will look as one big container instead of multiple ones for each ad -->
+
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="row">
+                <div class='col-md-2'>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Current Matches</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Game filter</th>
+                            <tr>
+                                <th scope="row">2</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <div class="col-md-5">
+                    <h3 id='soccer_title'>Soccer game!</h1>
+                        <h4>We need 5 intermediate players. Please show up on time and don't play rough, it's just
+                            for
+                            fun!</h4>
+                        <a class="btn btn-success btn-lg my-5" href="/Join match.html" role="button">Join us</a>
+                </div>
+                <div class="col-md-5 px-0">
+                    <img src="soccer.jpg" id='soccer_pic' class='img-fluid' />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+
+                </div>
+                <div class='col-md-5'>
+                    <h3 id='basketball_title'>Basketball match!</h3>
+                    <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
+                        professionaly in college.</h4>
+                    <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
+                </div>
+
+                <div class='col-md-5 px-0'>
+                    <img src='basketball.jpg' id='basketball_pic' class='img-fluid'>
+                </div>
+            </div class='row'>
+
+        </div>
+    </div>
+
+    <form id="form" method="post" onsubmit="addGame()">
+        <input type="text" name="name" value="John">
+        <input type="text" name="surname" value="Smith">
+        <input type="submit" onsubmit="addGame()">
+    </form>
 
 
 </body>
