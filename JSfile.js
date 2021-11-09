@@ -62,7 +62,7 @@ function getGames() {
 
 function addGame() {
 
-    let formElem = document.getElementById("form")
+    let formElem = document.getElementById("form1")
     let formData = new FormData(formElem)
     let formJson = JSON.stringify(Object.fromEntries(formData))
 
