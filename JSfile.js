@@ -76,7 +76,6 @@ function addGame() {
     //let formData = new FormData(formElem)
     //let formJson = JSON.stringify(Object.fromEntries(formData))
 
-
     let firstName = document.getElementById("firstName").value
     let lastName = document.getElementById("lastName").value
     let sport = getCheckedRadioValue('gridRadios')
