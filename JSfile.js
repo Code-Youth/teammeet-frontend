@@ -115,6 +115,7 @@ var divCol = document.createElement("div")
 divCol.setAttribute("class","col-md-2")
 var table1 = document.createElement("table")
 table1.setAttribute("class", "table")
+table1.setAttribute("id","table1")
 var thead = document.createElement("thead")
 var tr = document.createElement("tr")
 var thScope = document.createElement("th")
@@ -125,7 +126,7 @@ var tbody = document.createElement("tbody")
 var tr1 = document.createElement("tr")
 var thScope1 = document.createElement("tr")
 thScope1.setAttribute("scope", "row")
-thScope1.innerHTML = "skill level:"
+thScope1.innerHTML = "skill level: " + game.description
 var tr2 = document.createElement("tr")
 var thScope2 = document.createElement("th")
 thScope2.setAttribute("scope", "row")
@@ -133,7 +134,7 @@ thScope2.innerHTML = ("Current Players: " + game.numPlayers)
 var tr3 = document.createElement("tr")
 var thScope3 = document.createElement("th")
 thScope3.setAttribute("scope","row")
-thScope3.innerHTML = "Players needed:"
+thScope3.innerHTML = "Sport: " + game.sport
 var tr4 = document.createElement("tr")
 var thScope4 = document.createElement("th")
 thScope4.setAttribute("scope", "row")
@@ -167,14 +168,14 @@ var sideDiv = document.createElement("div")
 sideDiv.setAttribute("class", "col-md-5")
 var atche3 = document.createElement("h3")
 atche3.setAttribute("id", "basketball_title")
-atche3.innerHTML = "bastetball match"
+atche3.innerHTML = game.sport + ":" + game.description
 var atche4 = document.createElement("h4")
-atche4.innerHTML = "Looking for 3 pro ballers. Matches are very intense and many of our players played professionaly in college."
+atche4.innerHTML = game.description
 var aclass = document.createElement("a")
 aclass.setAttribute("class","btn btn-danger my-5")
 aclass.setAttribute("href","join_match.html")
 aclass.innerHTML = ("Join match!")
-document.body.appendChild(sideDiv)
+divRow.appendChild(sideDiv)
 sideDiv.appendChild(atche3)
 sideDiv.appendChild(atche4)
 sideDiv.appendChild(aclass)
