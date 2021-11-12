@@ -8,6 +8,7 @@ function getCheckedRadioValue(inputName) {
     }
 }
 
+
 function appendGameCard(game) {
     let jumbotronDiv = document.createElement("div")
     jumbotronDiv.setAttribute("class", "jumbotron")
