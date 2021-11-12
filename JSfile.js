@@ -162,7 +162,30 @@ tbody.appendChild(tr4)
 tr4.appendChild(thScope4)
 tbody.appendChild(tr5)
 tr5.appendChild(thScope5)
+
+var sideDiv = document.createElement("div")
+sideDiv.setAttribute("class", "col-md-5")
+var atche3 = document.createElement("h3")
+atche3.setAttribute("id", "basketball_title")
+atche3.innerHTML = "bastetball match"
+var atche4 = document.createElement("h4")
+atche4.innerHTML = "Looking for 3 pro ballers. Matches are very intense and many of our players played professionaly in college."
+var aclass = document.createElement("a")
+aclass.setAttribute("class","btn btn-danger my-5")
+aclass.setAttribute("href","join_match.html")
+aclass.innerHTML = ("Join match!")
+document.body.appendChild(sideDiv)
+sideDiv.appendChild(atche3)
+sideDiv.appendChild(atche4)
+sideDiv.appendChild(aclass)
 }
+/*    <div class='col-md-5'>
+                    <h3 id='basketball_title'>Basketball match!</h3>
+                    <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
+                        professionaly in college.</h4>
+                    <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
+                </div>
+                */
 //Testing findgame post
 
 /*
