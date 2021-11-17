@@ -108,7 +108,7 @@ function appendGameCard(game) {
     var jumboDiv = document.createElement("div")
     jumboDiv.setAttribute("class", "jumbotron")
     var divDov = document.createElement("div")
-    divDov.setAttribute("class", "container")
+    divDov.setAttribute("class", "container border-top border-danger")
     var divRow = document.createElement("div")
     divRow.setAttribute("class", "row")
     var divCol = document.createElement("div")
@@ -168,6 +168,7 @@ function appendGameCard(game) {
     sideDiv.setAttribute("class", "col-md-5")
     var atche3 = document.createElement("h3")
     atche3.setAttribute("id", "basketball_title")
+    atche3.setAttribute("class", "border-bottom")
     atche3.innerHTML = game.sport + ":" + game.description
     var atche4 = document.createElement("h4")
     atche4.innerHTML = game.description
