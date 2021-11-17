@@ -76,15 +76,14 @@ function addGame() {
     //let formData = new FormData(formElem)
     //let formJson = JSON.stringify(Object.fromEntries(formData))
 
-    let firstName = document.getElementById("firstName").value
-    let lastName = document.getElementById("lastName").value
-    let sport = getCheckedRadioValue('gridRadios')
-    let numPlayers = document.getElementById('numPlayers').value
+    let firstName = document.getElementById("first_name").value
+    let lastName = document.getElementById("last_name").value
+    let sport = document.getElementById('sport_list').value
+    let numPlayers = document.getElementById('num_players').value
     let location = document.getElementById("location").value
     let date = document.getElementById("date").value
-    let description = document.getElementById("description").value
-
-
+    let description = document.getElementById("Description").value
+if(description.length <= 320){
     let gameData = {
         "firstName": firstName,
         "lastName": lastName,
@@ -101,7 +100,11 @@ function addGame() {
       }).then(res => {
         console.log("Request complete! response:", res);
       });
-
+    }
+    else{
+        console.log(description.length)
+        window.alert("Description is too long. Please keep it under 320 characters")
+    }
 }
 
 function appendGameCard(game) {
@@ -159,23 +162,19 @@ function appendGameCard(game) {
     table1.appendChild(tbody)
     tbody.appendChild(trNames)
     trNames.appendChild(thScopeNames)
-    tbody.appendChild(tr1)
-    tr1.appendChild(thScope1)
     tbody.appendChild(tr2)
     tr2.appendChild(thScope2)
-    tbody.appendChild(tr3)
-    tr3.appendChild(thScope3)
     tbody.appendChild(tr4)
     tr4.appendChild(thScope4)
     tbody.appendChild(tr5)
     tr5.appendChild(thScope5)
 
     var sideDiv = document.createElement("div")
-    sideDiv.setAttribute("class", "col-md-5")
+    sideDiv.setAttribute("class", "col-md-7")
     var atche3 = document.createElement("h3")
     atche3.setAttribute("id", "basketball_title")
     atche3.setAttribute("class", "border-bottom")
-    atche3.innerHTML = game.sport + ":" + game.description
+    atche3.innerHTML = game.sport + " - " + game.location
     var atche4 = document.createElement("h4")
     atche4.innerHTML = game.description
     var aclass = document.createElement("a")
@@ -186,7 +185,14 @@ function appendGameCard(game) {
     sideDiv.appendChild(atche3)
     sideDiv.appendChild(atche4)
     sideDiv.appendChild(aclass)
+
+    var img = document.createElement("img")
+    img.setAttribute("src","art.png")
+    img.setAttribute("class", "test")
+    img.setAttribute("style","width: 300px; height: 180px; display: inline")
+    divRow.appendChild(img)
 }
+
 /*    <div class='col-md-5'>
                     <h3 id='basketball_title'>Basketball match!</h3>
                     <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
