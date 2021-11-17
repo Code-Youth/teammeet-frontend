@@ -83,7 +83,7 @@ function addGame() {
     let location = document.getElementById("location").value
     let date = document.getElementById("date").value
     let description = document.getElementById("Description").value
-if(description.length <= 320){
+if(description.length <= 640){
     let gameData = {
         "firstName": firstName,
         "lastName": lastName,
@@ -105,7 +105,7 @@ if(description.length <= 320){
         console.log(description.length)
         window.alert("Description is too long. Please keep it under 320 characters")
     }
-}
+
 
 function appendGameCard(game) {
     var jumboDiv = document.createElement("div")
@@ -150,6 +150,16 @@ function appendGameCard(game) {
     var thScope5 = document.createElement("th")
     thScope5.setAttribute("scope", "row")
     thScope5.innerHTML = "Location: " + game.location
+    var trJoin = document.createElement("tr")
+    var thJoin = document.createElement("th")
+    thJoin.setAttribute("class","thJoin")
+    thJoin.setAttribute("style", "background-color: rgb(230, 0, 0);   text-align: center;")
+    var aJoin = document.createElement("a")
+    aJoin.setAttribute("href", "")
+    aJoin.setAttribute("class", "joinButton")
+    aJoin.innerHTML = "Join Game"
+
+
 
     document.body.appendChild(jumboDiv)
     jumboDiv.appendChild(divDov)
@@ -168,6 +178,9 @@ function appendGameCard(game) {
     tr4.appendChild(thScope4)
     tbody.appendChild(tr5)
     tr5.appendChild(thScope5)
+    tbody.appendChild(trJoin)
+    trJoin.appendChild(thJoin)
+    thJoin.appendChild(aJoin)
 
     var sideDiv = document.createElement("div")
     sideDiv.setAttribute("class", "col-md-7")
@@ -175,16 +188,11 @@ function appendGameCard(game) {
     atche3.setAttribute("id", "basketball_title")
     atche3.setAttribute("class", "border-bottom")
     atche3.innerHTML = game.sport + " - " + game.location
-    var atche4 = document.createElement("h4")
+    var atche4 = document.createElement("h5")
     atche4.innerHTML = game.description
-    var aclass = document.createElement("a")
-    aclass.setAttribute("class", "btn btn-danger my-5")
-    aclass.setAttribute("href", "join_match.html")
-    aclass.innerHTML = ("Join match!")
     divRow.appendChild(sideDiv)
     sideDiv.appendChild(atche3)
     sideDiv.appendChild(atche4)
-    sideDiv.appendChild(aclass)
 
     var img = document.createElement("img")
     img.setAttribute("src","art.png")
