@@ -115,8 +115,22 @@
 
                 <p id='Descrip_title'>Description</p>
 
-                <textarea id='Description' name='text1' cols='60' row='10'
+                <textarea id='Description' name='text1' cols='60' row='10' onkeyup='charCount(this)'
                     placeholder="Add extra details about the game"></textarea>
+                <br>
+                <p id='textCount1'><span id='textCount'>0</span> of 460 characters</p>>
+
+                <style>
+                    #textCount1 {
+                        color: #fff;
+                    }
+                </style>
+
+                <script>
+                    function charCount(obj) {
+                        document.getElementById('textCount').innerHTML = obj.value.length;
+                    }
+                </script>
 
                 <div class="form-group">
                     <div class="col-sm-10">
