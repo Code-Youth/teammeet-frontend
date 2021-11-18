@@ -105,7 +105,7 @@ if(description.length <= 640){
         console.log(description.length)
         window.alert("Description is too long. Please keep it under 320 characters")
     }
-
+}
 
 function appendGameCard(game) {
     var jumboDiv = document.createElement("div")
