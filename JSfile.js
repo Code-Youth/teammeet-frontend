@@ -76,15 +76,14 @@ function addGame() {
     //let formData = new FormData(formElem)
     //let formJson = JSON.stringify(Object.fromEntries(formData))
 
-    let firstName = document.getElementById("firstName").value
-    let lastName = document.getElementById("lastName").value
-    let sport = getCheckedRadioValue('gridRadios')
-    let numPlayers = document.getElementById('numPlayers').value
+    let firstName = document.getElementById("first_name").value
+    let lastName = document.getElementById("last_name").value
+    let sport = document.getElementById('sport_list').value
+    let numPlayers = document.getElementById('num_players').value
     let location = document.getElementById("location").value
     let date = document.getElementById("date").value
-    let description = document.getElementById("description").value
-
-
+    let description = document.getElementById("Description").value
+if(description.length <= 640){
     let gameData = {
         "firstName": firstName,
         "lastName": lastName,
@@ -101,14 +100,18 @@ function addGame() {
       }).then(res => {
         console.log("Request complete! response:", res);
       });
-
+    }
+    else{
+        console.log(description.length)
+        window.alert("Description is too long. Please keep it under 320 characters")
+    }
 }
 
 function appendGameCard(game) {
     var jumboDiv = document.createElement("div")
     jumboDiv.setAttribute("class", "jumbotron")
     var divDov = document.createElement("div")
-    divDov.setAttribute("class", "container")
+    divDov.setAttribute("class", "container border-top border-danger")
     var divRow = document.createElement("div")
     divRow.setAttribute("class", "row")
     var divCol = document.createElement("div")
@@ -123,6 +126,10 @@ function appendGameCard(game) {
     thScope.setAttribute("class", "table_header")
     thScope.innerHTML = "About"
     var tbody = document.createElement("tbody")
+    var trNames = document.createElement("tr")
+    var thScopeNames = document.createElement("th")
+    thScopeNames.setAttribute("scope", "row")
+    thScopeNames.innerHTML = (game.firstName + " " + game.lastName)
     var tr1 = document.createElement("tr")
     var thScope1 = document.createElement("tr")
     thScope1.setAttribute("scope", "row")
@@ -130,7 +137,7 @@ function appendGameCard(game) {
     var tr2 = document.createElement("tr")
     var thScope2 = document.createElement("th")
     thScope2.setAttribute("scope", "row")
-    thScope2.innerHTML = ("Current Players: " + game.numPlayers)
+    thScope2.innerHTML = ("Players Needed: " + game.numPlayers)
     var tr3 = document.createElement("tr")
     var thScope3 = document.createElement("th")
     thScope3.setAttribute("scope", "row")
@@ -143,6 +150,16 @@ function appendGameCard(game) {
     var thScope5 = document.createElement("th")
     thScope5.setAttribute("scope", "row")
     thScope5.innerHTML = "Location: " + game.location
+    var trJoin = document.createElement("tr")
+    var thJoin = document.createElement("th")
+    thJoin.setAttribute("class","thJoin")
+    thJoin.setAttribute("style", "background-color: rgb(230, 0, 0);   text-align: center;")
+    var aJoin = document.createElement("a")
+    aJoin.setAttribute("href", "")
+    aJoin.setAttribute("class", "joinButton")
+    aJoin.innerHTML = "Join Game"
+
+
 
     document.body.appendChild(jumboDiv)
     jumboDiv.appendChild(divDov)
@@ -153,33 +170,37 @@ function appendGameCard(game) {
     thead.appendChild(tr)
     tr.appendChild(thScope)
     table1.appendChild(tbody)
-    tbody.appendChild(tr1)
-    tr1.appendChild(thScope1)
+    tbody.appendChild(trNames)
+    trNames.appendChild(thScopeNames)
     tbody.appendChild(tr2)
     tr2.appendChild(thScope2)
-    tbody.appendChild(tr3)
-    tr3.appendChild(thScope3)
     tbody.appendChild(tr4)
     tr4.appendChild(thScope4)
     tbody.appendChild(tr5)
     tr5.appendChild(thScope5)
+    tbody.appendChild(trJoin)
+    trJoin.appendChild(thJoin)
+    thJoin.appendChild(aJoin)
 
     var sideDiv = document.createElement("div")
-    sideDiv.setAttribute("class", "col-md-5")
+    sideDiv.setAttribute("class", "col-md-7")
     var atche3 = document.createElement("h3")
     atche3.setAttribute("id", "basketball_title")
-    atche3.innerHTML = game.sport + ":" + game.description
-    var atche4 = document.createElement("h4")
+    atche3.setAttribute("class", "border-bottom")
+    atche3.innerHTML = game.sport + " - " + game.location
+    var atche4 = document.createElement("h5")
     atche4.innerHTML = game.description
-    var aclass = document.createElement("a")
-    aclass.setAttribute("class", "btn btn-danger my-5")
-    aclass.setAttribute("href", "join_match.html")
-    aclass.innerHTML = ("Join match!")
     divRow.appendChild(sideDiv)
     sideDiv.appendChild(atche3)
     sideDiv.appendChild(atche4)
-    sideDiv.appendChild(aclass)
+
+    var img = document.createElement("img")
+    img.setAttribute("src","art.png")
+    img.setAttribute("class", "test")
+    img.setAttribute("style","width: 300px; height: 180px; display: inline")
+    divRow.appendChild(img)
 }
+
 /*    <div class='col-md-5'>
                     <h3 id='basketball_title'>Basketball match!</h3>
                     <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
