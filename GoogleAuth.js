@@ -12,7 +12,9 @@ function getCookie(name) {
 }
 
 function isSignedIn(){
-    console.log(getCookie("g_state"))
+    if (loginToken !== undefined)
+      console.log("you're signed in!")
+      return true
 }
 
 function parseJwt (token) {
@@ -31,30 +33,24 @@ function handleCredentialResponse(response) {
     // to decode the credential response.
     const responsePayload = parseJwt(response.credential);
 
-    console.log(loginToken)
-
-    console.log(responsePayload)
-
-    console.log("ID: " + responsePayload.sub);
-    console.log('Full Name: ' + responsePayload.name);
-    console.log('Given Name: ' + responsePayload.given_name);
-    console.log('Family Name: ' + responsePayload.family_name);
-    console.log("Image URL: " + responsePayload.picture);
-    console.log("Email: " + responsePayload.email);
-
-    console.log(JSON.stringify({"id_token": response.credential}))
+    //console.log(JSON.stringify({"id_token": response.credential}))
 
     fetch("https://teammeet-backend-app.azurewebsites.net/api/login", {
         method: "post", 
         body: JSON.stringify({"id_token": response.credential})
-      }).then(res => {
-        console.log("Request complete! response:", res);
-      });
+      })
+      .then((resp) => resp.json())
+      .then(function(data) {
+          loginToken = data.id_token
+          console.log(loginToken)
+      })
+      .catch(function(error) {
+          console.log(error);
+      });  
  }
 
 window.onload = function () {
     //load games
-    getGames()
     
     //set up google sign in
     google.accounts.id.initialize({
@@ -62,10 +58,11 @@ window.onload = function () {
       auto_select:"true",
       callback: handleCredentialResponse
     });
-    google.accounts.id.renderButton(
-      document.getElementById("buttonDiv"),
-      { theme: "outline", size: "large" }  // customization attributes
-    );
+ //   google.accounts.id.renderButton(
+ //     document.getElementById("buttonDiv"),
+ //     { theme: "outline", size: "large" }  // customization attributes
+ //   );
     google.accounts.id.prompt(); // also display the One Tap dialog
 }
+
 

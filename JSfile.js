@@ -55,10 +55,13 @@ function appendGameCard(game) {
 
 function getGames() {
 
-    fetch("https://teammeet-backend-app.azurewebsites.net/api/games")
+    console.log(isSignedIn())
+
+    let sport = document.getElementById("sport_filter").value
+
+    fetch("https://teammeet-backend-app.azurewebsites.net/api/games?sport=" + sport)
     .then((resp) => resp.json())
     .then(function(data) {
-
         let games = data.games
 
         for (let i = 0; i < games.length; i++) {
@@ -83,23 +86,23 @@ function addGame() {
     let location = document.getElementById("location").value
     let date = document.getElementById("date").value
     let description = document.getElementById("Description").value
-if(description.length <= 640){
-    let gameData = {
-        "firstName": firstName,
-        "lastName": lastName,
-        "sport": sport,
-        "numPlayers": numPlayers,
-        "location": location,
-        "date": date,
-        "description": description
-    }
+    if(description.length <= 640){
+        let gameData = {
+            "firstName": firstName,
+            "lastName": lastName,
+            "sport": sport,
+            "numPlayers": numPlayers,
+            "location": location,
+            "date": date,
+            "description": description
+        }
 
-    fetch("https://teammeet-backend-app.azurewebsites.net/api/games", {
-        method: "post", 
-        body: JSON.stringify(gameData)
-      }).then(res => {
-        console.log("Request complete! response:", res);
-      });
+        fetch("https://teammeet-backend-app.azurewebsites.net/api/games", {
+            method: "post", 
+            body: JSON.stringify(gameData)
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
     }
     else{
         console.log(description.length)
@@ -108,6 +111,7 @@ if(description.length <= 640){
 }
 
 function appendGameCard(game) {
+    
     var jumboDiv = document.createElement("div")
     jumboDiv.setAttribute("class", "jumbotron")
     var divDov = document.createElement("div")
