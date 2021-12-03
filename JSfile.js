@@ -53,14 +53,19 @@ function appendGameCard(game) {
 }
 */
 
-function getGames() {
+function getGames(x) {
+    if(x == undefined){
+        x = ""
+    }
+    console.log(x)
+    console.log("funcopop")
+    fetch("https://teammeet-backend-app.azurewebsites.net/api/games" + x)
 
-    fetch("https://teammeet-backend-app.azurewebsites.net/api/games")
     .then((resp) => resp.json())
     .then(function(data) {
 
         let games = data.games
-
+        document.getElementById("gameList").innerHTML = ""
         for (let i = 0; i < games.length; i++) {
             appendGameCard(games[i])
         } 
@@ -68,8 +73,24 @@ function getGames() {
     .catch(function(error) {
         console.log(error);
     });
-}
 
+// else{
+//     console.log("helo")
+//     fetch("https://teammeet-backend-app.azurewebsites.net/api/games")
+//     .then((resp) => resp.json())
+//     .then(function(data) {
+
+//         let games = data.games
+
+//         for (let i = 0; i < games.length; i++) {
+//             appendGameCard(games[i])
+//         } 
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     });
+// }
+}
 function addGame() {
 
     //let formElem = document.getElementById("form1")
@@ -108,6 +129,7 @@ if(description.length <= 640){
 }
 
 function appendGameCard(game) {
+    var gameDiv = document.getElementById("gameList")
     var jumboDiv = document.createElement("div")
     jumboDiv.setAttribute("class", "jumbotron")
     var divDov = document.createElement("div")
@@ -161,7 +183,7 @@ function appendGameCard(game) {
 
 
 
-    document.body.appendChild(jumboDiv)
+    gameDiv.appendChild(jumboDiv)
     jumboDiv.appendChild(divDov)
     divDov.appendChild(divRow)
     divRow.appendChild(divCol)
@@ -239,3 +261,9 @@ function appendGameCard(game) {
                         </tbody>
                     </table>
                     */
+function buten(){
+                    var kill = document.getElementById("kill")
+                    console.log(kill.value)
+                    getGames("?sport=" + kill.value)
+                            //?sport=Soccer//
+}
