@@ -1,12 +1,14 @@
 
 function isSignedIn(){
-    if (getCookie("token") !== undefined){
+    console.log(getCookie("token"))
+
+    if (getCookie("token")){
       console.log("you're signed in!")
       return true
     }
     else {
         console.log("you're not signed in.....")
-        promptOneTap
+        promptOneTap()
         return false
     }
 }
@@ -54,10 +56,11 @@ function promptOneTap(){
         callback: handleCredentialResponse
     });
 
-    //   google.accounts.id.renderButton(
-    //     document.getElementById("buttonDiv"),
-    //     { theme: "outline", size: "large" }  // customization attributes
-    //   );
+    google.accounts.id.renderButton(
+         document.getElementById("buttonDiv"),
+         { theme: "outline", size: "large" }  // customization attributes
+       );
+       
     google.accounts.id.prompt(); // also display the One Tap dialog
 }
 
