@@ -1,7 +1,5 @@
 
 function isSignedIn(){
-    console.log(getCookie("token"))
-
     if (getCookie("token")){
       console.log("you're signed in!")
       return true
@@ -60,7 +58,7 @@ function promptOneTap(){
          document.getElementById("buttonDiv"),
          { theme: "outline", size: "large" }  // customization attributes
        );
-       
+
     google.accounts.id.prompt(); // also display the One Tap dialog
 }
 
