@@ -53,9 +53,7 @@ function appendGameCard(game) {
 }
 */
 
-function getGames() {
-
-    console.log(isSignedIn())
+function loadGames() {
 
     let sport = document.getElementById("sport_filter").value
 
@@ -73,11 +71,25 @@ function getGames() {
     });
 }
 
-function addGame() {
+function getGame(game_id) {
 
-    //let formElem = document.getElementById("form1")
-    //let formData = new FormData(formElem)
-    //let formJson = JSON.stringify(Object.fromEntries(formData))
+    //let sport = document.getElementById("sport_filter").value
+
+    fetch("https://teammeet-backend-app.azurewebsites.net/api/games?_id=" + game_id)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        let games = data.games
+
+        for (let i = 0; i < games.length; i++) {
+            appendGameCard(games[i])
+        } 
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+}
+
+function addGame() {
 
     let firstName = document.getElementById("first_name").value
     let lastName = document.getElementById("last_name").value
@@ -86,6 +98,7 @@ function addGame() {
     let location = document.getElementById("location").value
     let date = document.getElementById("date").value
     let description = document.getElementById("Description").value
+    
     if(description.length <= 640){
         let gameData = {
             "firstName": firstName,
@@ -111,6 +124,8 @@ function addGame() {
 }
 
 function appendGameCard(game) {
+
+    console.log(game)
     
     var jumboDiv = document.createElement("div")
     jumboDiv.setAttribute("class", "jumbotron")
@@ -159,9 +174,20 @@ function appendGameCard(game) {
     thJoin.setAttribute("class","thJoin")
     thJoin.setAttribute("style", "background-color: rgb(230, 0, 0);   text-align: center;")
     var aJoin = document.createElement("a")
-    aJoin.setAttribute("href", "")
+
+    //let's look at the destination were linking to
+    console.log(window.location.origin + "/game-info?game_id=" + game._id)
+
+    aJoin.setAttribute("href", window.location.origin + "/game-info.html?game_id=" + game._id)
     aJoin.setAttribute("class", "joinButton")
     aJoin.innerHTML = "Join Game"
+
+
+    // this is where we are hiding an input box!
+    var hiddenInput = document.createElement("input")
+    hiddenInput.setAttribute("type", "hidden");
+    hiddenInput.setAttribute("value", game._id);
+    
 
 
 
@@ -185,6 +211,7 @@ function appendGameCard(game) {
     tbody.appendChild(trJoin)
     trJoin.appendChild(thJoin)
     thJoin.appendChild(aJoin)
+    aJoin.appendChild(hiddenInput)
 
     var sideDiv = document.createElement("div")
     sideDiv.setAttribute("class", "col-md-7")
@@ -199,47 +226,8 @@ function appendGameCard(game) {
     sideDiv.appendChild(atche4)
 
     var img = document.createElement("img")
-    img.setAttribute("src","art.png")
+    //img.setAttribute("src","art.png")
     img.setAttribute("class", "test")
     img.setAttribute("style","width: 300px; height: 180px; display: inline")
     divRow.appendChild(img)
 }
-
-/*    <div class='col-md-5'>
-                    <h3 id='basketball_title'>Basketball match!</h3>
-                    <h4>Looking for 3 pro ballers. Matches are very intense and many of our players played
-                        professionaly in college.</h4>
-                    <a class='btn btn-danger my-5' href='Join match.html'>Join match</a>
-                </div>
-                */
-//Testing findgame post
-
-/*
-    <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class='col-md-2'>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" class='table_header'>About</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Skill level: Amatuer</th>
-                            <tr>
-                                <th scope="row">Current players: 7</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">Player needed: 5</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">Date:10/27/2021</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">Location: .....</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                    */
