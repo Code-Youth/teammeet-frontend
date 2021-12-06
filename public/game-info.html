@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
+    
+    <link rel='stylesheet' href='css/homepage.css'>
+    <script src="js/games.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/google-auth.js"></script>
+    <script src="js/cookies.js"></script>    
+    <title>Game Detail</title>
+</head>
+
+<body id="findBody">
+    
+    <div id="buttonDiv"></div> 
+
+    <h1 id='game_title'>Game Title</h1>
+    <br>
+
+    <section id='players'>
+        <div class='container border'>
+            <div class='row'>
+                <div class='col-sm-4'>
+                    <table>
+                        <tr>
+                            <th>Player 1</th>
+                            <th class='slot'>Open</th>
+                        </tr>
+                        <tr>
+                            <th>Player 2</th>
+                            <th class='slot'>Open</th>
+                        </tr>
+                        <tr>
+                            <th>Player 3</th>
+                            <th class='slot'>Open</th>
+                        </tr>
+                        <tr>
+                            <th>Player 4</th>
+                            <th class='slot'>Open</th>
+                        </tr>
+                        <tr>
+                            <th>Player 5</th>
+                            <th class='slot'>Open</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class='col-sm-4'>
+                    <textarea placeholder="Description of game"></textarea>
+                    <span>Date</span>
+                    <input placeholder="Date">
+                    <br>
+                    <span>Location</span>
+                    <input placeholder="Location">
+                    <br>
+                    <span>Date</span>
+                    <input placeholder="Date">
+                    <br>
+                    <button onclick="reserveSpot()">Reserve</button>
+                    <button onclick="unreserveSpot()">Unreserve</button>
+                    <button onclick="loadReservation()">log reservations</button>
+                </div>
+                <div class='col-sm-4'>
+                    <img src='img/basketball-shot.jpg'>
+                </div>
+
+            </div>
+            <!--End of row-->
+            <div class='row'>
+
+            </div>
+        </div>
+        <!-- End of container -->
+
+    </section>
+    
+    <script src="https://accounts.google.com/gsi/client"></script>
+    <script>
+        // self executing function here
+        (function() {
+           isSignedIn()
+           promptOneTap()
+        })();
+    </script>
+</body>
+
+</html>
