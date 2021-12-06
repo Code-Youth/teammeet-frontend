@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
-    <script src="JSfile.js"></script>
-    <script src="GameInfo.js"></script>
-    <script src="GoogleAuth.js"></script>
-    <link rel='stylesheet' href='Homepage.css'>
-    <title>Document</title>
+    
+    <link rel='stylesheet' href='css/homepage.css'>
+    <script src="js/games.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/google-auth.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/firebase.js"></script>
+    
+    <title>Game Detail</title>
 </head>
 
 <body id="findBody">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     
     <div id="buttonDiv"></div> 
 
@@ -61,10 +64,10 @@
                     <br>
                     <button onclick="reserveSpot()">Reserve</button>
                     <button onclick="unreserveSpot()">Unreserve</button>
-                    <button onclick="seeReservation()">log reservations</button>
+                    <button onclick="loadReservation()">log reservations</button>
                 </div>
                 <div class='col-sm-4'>
-                    <img src='/TeamMeet_Basketball shot.jpg'>
+                    <img src='img/basketball-shot.jpg'>
                 </div>
 
             </div>
@@ -76,7 +79,15 @@
         <!-- End of container -->
 
     </section>
-
+    
+    <script src="https://accounts.google.com/gsi/client"></script>
+    <script>
+        // self executing function here
+        (function() {
+           isSignedIn()
+           initFirebase()
+        })();
+    </script>
 </body>
 
 </html>

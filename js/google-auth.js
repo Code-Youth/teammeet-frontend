@@ -1,20 +1,18 @@
-var loginToken
-
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
 
 function isSignedIn(){
-    if (loginToken !== undefined)
+    if (getCookie("token") !== undefined){
       console.log("you're signed in!")
       return true
+    }
+    else {
+        console.log("you're not signed in.....")
+        promptOneTap
+        return false
+    }
+}
+
+function signOut(){
+    eraseCookie("token")
 }
 
 function parseJwt (token) {
@@ -31,7 +29,7 @@ function handleCredentialResponse(response) {
 
     // decodeJwtResponse() is a custom function defined by you
     // to decode the credential response.
-    const responsePayload = parseJwt(response.credential);
+    //const responsePayload = parseJwt(response.credential);
 
     //console.log(JSON.stringify({"id_token": response.credential}))
 
@@ -41,27 +39,25 @@ function handleCredentialResponse(response) {
       })
       .then((resp) => resp.json())
       .then(function(data) {
-          loginToken = data.id_token
-          console.log(loginToken)
+          setCookie("token", data.id_token, 1)
       })
       .catch(function(error) {
-          console.log(error);
+          console.log(error.json());
       });  
  }
 
-window.onload = function () {
-    //load games
-    
+function promptOneTap(){
     //set up google sign in
     google.accounts.id.initialize({
-      client_id: "762166936097-3ipgsitvak36e33lodlurib3efrreg8i.apps.googleusercontent.com",
-      auto_select:"true",
-      callback: handleCredentialResponse
+        client_id: "762166936097-3ipgsitvak36e33lodlurib3efrreg8i.apps.googleusercontent.com",
+        auto_select:"true",
+        callback: handleCredentialResponse
     });
- //   google.accounts.id.renderButton(
- //     document.getElementById("buttonDiv"),
- //     { theme: "outline", size: "large" }  // customization attributes
- //   );
+
+    //   google.accounts.id.renderButton(
+    //     document.getElementById("buttonDiv"),
+    //     { theme: "outline", size: "large" }  // customization attributes
+    //   );
     google.accounts.id.prompt(); // also display the One Tap dialog
 }
 

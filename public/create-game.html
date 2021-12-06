@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
+    
+    <link rel='stylesheet' href='css/games.css'>
+    <script src="js/games.js"></script>
+    
+    <title>Host</title>
+</head>
+
+<body>
+
+    <!--Title-->
+    <section class='pagetop'>
+        <div class='container-fluid'>
+            <div class='row'>
+                <div class='col-sm-12 text-center'>
+                    <a href='index.html' id='Teammeet'>
+                        <h1>Teameet</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End of title-->
+    <br>
+
+    <!--This is the beginning of the nav bar-->
+    <!--<section class='navbar'>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Log in</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href='Create_Game.html'><strong>Post Game</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='FindGame.html'><strong>Find game</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+        </nav>
+    </section>-->
+
+    <!--End of navbar-->
+    <br>
+
+    <!--Form container-->
+    <section class='form_sec'>
+        <form id='form1'>
+            <div class='container'>
+                <div class="form-group">
+                    <label for="first_name" class="col-sm-2 col-form-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="first_name" placeholder="Enter First Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last_name" class="col-sm-2 col-form-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sport_list" class="col-sm-2 col-form-label">Sports</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="sport_list" list='sports'
+                            placeholder="Choose sport">
+                        <datalist id='sports'>
+                            <option value='Soccer'>
+                            <option value='Basketball'>
+                        </datalist>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="num_player" class="col-sm-2 col-form-label">Players needed</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="num_players"
+                            placeholder="Enter how many players needed">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-2 col-form-label">Location</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="location" placeholder="Enter your location">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-2 col-form-label">Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="date" placeholder="dd-mm-yyyy">
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <input type="textarea" class="form-control" id="des"
+                            placeholder="Add any extra details about the game">
+                    </div>
+                </div> -->
+
+                <p id='Descrip_title'>Description</p>
+
+                <textarea id='Description' name='text1' cols='60' row='10' onkeyup='charCount(this)'
+                    placeholder="Add extra details about the game"></textarea>
+                <br>
+                <p id='textCount1'><span id='textCount'>0</span> of 460 characters</p>>
+
+                <style>
+                    #textCount1 {
+                        color: #fff;
+                    }
+                </style>
+
+                <script>
+                    function charCount(obj) {
+                        document.getElementById('textCount').innerHTML = obj.value.length;
+                    }
+                </script>
+
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <button class="btn btn-primary" onclick="addGame()" type="button">Create Game Post</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!--End of form seciton-->
+
+</body>
+
+</html>

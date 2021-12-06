@@ -1,0 +1,21 @@
+[debug] [2021-12-06T03:15:21.207Z] ----------------------------------------------------------------------
+[debug] [2021-12-06T03:15:21.209Z] Command:       /Users/carterkilgour/.nvm/versions/node/v10.16.0/bin/node /Users/carterkilgour/.nvm/versions/node/v10.16.0/bin/firebase init
+[debug] [2021-12-06T03:15:21.209Z] CLI Version:   9.23.0
+[debug] [2021-12-06T03:15:21.210Z] Platform:      darwin
+[debug] [2021-12-06T03:15:21.210Z] Node Version:  v10.16.0
+[debug] [2021-12-06T03:15:21.210Z] Time:          Sun Dec 05 2021 22:15:21 GMT-0500 (Eastern Standard Time)
+[debug] [2021-12-06T03:15:21.210Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-12-06T03:15:21.218Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-12-06T03:15:21.218Z] > authorizing via signed-in user (carter.kilgour@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/carterkilgour/Documents/GitHub/teammeet-frontend
+
