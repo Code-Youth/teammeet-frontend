@@ -270,6 +270,7 @@ function buten(){
                     else{
                         var dFilter = document.getElementById("dateFilterDefault")
                         getGames("?date="+dFilter.value)
+                        console.log(dFilter.value)
                     }
                     
 }
