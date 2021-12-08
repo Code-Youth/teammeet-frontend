@@ -14,13 +14,33 @@
 </head>
 
 <body id="findBody">
-    <input id="kill" type="text" placeholder="Sport"><button onclick="buten()">Hello</button>
+    <!-- <input id="kill" type="text" placeholder="Sport"><button onclick="buten()">Hello</button> -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div id="buttonDiv"></div> 
-
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
     <a href='Homepage.html' id='Teammeet'>
         <h1>Teameet</h1>
     </a>
+    </div>
+    </div>
+    
+    <div class="container">
+        <!-- <div class="row"> -->
+            <div style="display: inline;">
+    <input type="text" style="width:10%" id="sportFilter" list='sports' placeholder="Sport">
+                        <datalist id='sports'>
+                            <option value='Soccer'>
+                            <option value='Basketball'>
+                        </datalist>
+                        </div>
+                        <div style="display: inline;">
+                        <button onclick="buten()">Filter</button>
+                    </div>    
+                    </div>
+                        <!-- </div> -->
     <div id="gameList">
 
     </div>

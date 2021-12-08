@@ -262,8 +262,7 @@ function appendGameCard(game) {
                     </table>
                     */
 function buten(){
-                    var kill = document.getElementById("kill")
-                    console.log(kill.value)
-                    getGames("?sport=" + kill.value)
+                    var spFilter = document.getElementById("sportFilter")
+                    getGames("?sport=" + spFilter.value)
                             //?sport=Soccer//
 }
