@@ -262,7 +262,14 @@ function appendGameCard(game) {
                     </table>
                     */
 function buten(){
+                    if (document.getElementById("sportFilter".value !== undefined)){
                     var spFilter = document.getElementById("sportFilter")
                     getGames("?sport=" + spFilter.value)
                             //?sport=Soccer//
+                    }
+                    else{
+                        var dFilter = document.getElementById("dateFilterDefault")
+                        getGames("?date="+dFilter.value)
+                    }
+                    
 }
