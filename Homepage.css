@@ -150,3 +150,53 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* CSS styling for Game info page 2 */
+
+.grid-container {
+  margin: 5% auto;
+  width: 90%;
+  height: 100vh;
+  border: 1px dashed black;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 5fr 5fr;
+}
+
+.grid-item {
+  border: 1px solid black;
+  background-color: wheat;
+}
+
+.grid-item-1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+}
+
+.grid-item-2 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.grid-item-3 {
+}
+
+.grid-item-4 {
+  grid-column-start: 2;
+}
+.grid-item-5 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+/* The title of the game info card */
+#Title {
+  font-size: 3em;
+}
+
+/* The players in the game info card */
+.player_list {
+  margin: 2em auto;
+}
