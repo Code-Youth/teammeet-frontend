@@ -98,10 +98,16 @@ function getGame(game_id) {
     .then((resp) => resp.json())
     .then(function(data) {
         let games = data.games
+        console.log(data)
 
-        for (let i = 0; i < games.length; i++) {
-            appendGameCard(games[i])
-        } 
+
+        let player1 = document.querySelector('#player1').innerHTML = games[0].firsName + " " + games[0].lastName
+        console.log(player1)
+        let title = document.querySelector('#Title').innerHTML = games[0].sport
+        // let skillLevel = document.querySelector('#skillLevel').innerHTML = games[0]
+        let date = document.querySelector('#date').innerHTML = games[0].date
+        let location = document.querySelector('#location').innerHTML = games[0].location
+        let description = document.querySelector('#description').innerHTML = games[0].description
     })
     .catch(function(error) {
         console.log(error);
@@ -205,7 +211,10 @@ function appendGameCard(game) {
     // this is where we are hiding an input box!
     var hiddenInput = document.createElement("input")
     hiddenInput.setAttribute("type", "hidden");
-    hiddenInput.setAttribute("value", game._id);
+    hiddenInput.setAttribute("value", game._id); // this is where we....
+
+    // This is what I hope will populate the page with the game info, please work....
+    
     
 
 
