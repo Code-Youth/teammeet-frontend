@@ -100,7 +100,7 @@
 } */
 
 #table1 {
-  border-right: 2px solid red;
+  border-right: 2px solid #54222F;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -115,7 +115,7 @@
 }
 
 #findBody {
-  background-color: seashell;
+  background-color: #d6f5ff;
 }
 
 /* CSS for Game Info page */
@@ -149,4 +149,47 @@ textarea {
 img {
   width: 100%;
   height: auto;
+}
+
+.jumbotron{
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2em;
+  animation: jumboUnHover .3s    reverse ;
+}
+
+.jumbotron:hover{
+  animation: jumboHover .3s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes jumboHover {
+  0%{
+    transform: translateX(0px) translateY(0px);
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  100%{
+    transform: translateX(10px) translateY(-10px);
+    border-bottom: 10px solid black;
+     border-left: 10px solid black;
+  }
+}
+@keyframes jumboUnHover {
+  0%{
+    transform: translateX(0px) translateY(0px);
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  100%{
+    transform: translateX(10px) translateY(-10px);
+    border-bottom: 10px solid black;
+     border-left: 10px solid black;
+  }
+}
+
+.postImg{
+  display: inline;
 }
