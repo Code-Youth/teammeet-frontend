@@ -279,7 +279,7 @@ function appendGameCard(game) {
     
 // }
 
-//Restructuring//
+//Restructured Filter button//
 function buten(){
     var firstParam = 1
     var filterQuery = "?"
