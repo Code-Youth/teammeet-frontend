@@ -120,7 +120,11 @@
 
 /* CSS for Game Info page */
 
-#game_title {
+#game_info {
+  display: flex;
+}
+
+#Title {
   text-align: center;
 }
 
@@ -129,10 +133,15 @@
 
 #players table {
   border: 1px solid black;
+  width: 100%;
 }
 
 #players table th {
   padding: 3em;
+}
+
+#info table th {
+  padding: 1em;
 }
 
 /* The 'open' text that is next to Players in the table */
@@ -146,7 +155,21 @@ textarea {
   height: 50%;
   justify-content: end;
 }
+
+/*Resizing the picture*/
 img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 80%;
+}
+
+nav img {
+  width: 5%;
+  height: 5%;
+}
+
+/*For the buttons*/
+button {
+  margin: 1em 1em;
+  width: 7em;
+  height: 3.5em;
 }

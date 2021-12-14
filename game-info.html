@@ -6,30 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
-    
+
     <link rel='stylesheet' href='css/homepage.css'>
     <script src="js/games.js"></script>
     <script src="js/reservations.js"></script>
     <script src="js/google-auth.js"></script>
-    <script src="js/cookies.js"></script>    
+    <script src="js/cookies.js"></script>
     <title>Game Detail</title>
 </head>
 
-<body id="findBody">
-    
-    <div id="buttonDiv"></div> 
+<body onload="getGameInfo('618debaf4b57201850746776')" id="findBody">
 
-    <h1 id='game_title'>Game Title</h1>
+    <div id="buttonDiv"></div>
+
+    <nav>
+        <a href='index.html'>
+            <img src='/img/TeamMeet.png'>
+        </a>
+    </nav>
+
+    <h1 id='Title'>Game Title</h1>
     <br>
 
-    <section id='players'>
+    <section id='game_info'>
         <div class='container border'>
             <div class='row'>
-                <div class='col-sm-4'>
+
+                <div class='col-sm-6'>
+                    <img id='pic' src='img/basketball-shot.jpg'>
+                    <br>
+                    <button onclick="reserveSpot()" type="button" class="btn btn-success">Reserve</button>
+                    <button onclick="unreserveSpot()" type="button" class="btn btn-danger">Unreserve</button>
+                    <!-- <button onclick="reserveSpot()">Reserve</button>
+                    <button onclick="unreserveSpot()">Unreserve</button> -->
+                </div>
+
+                <div class='col-sm-6' id='players'>
                     <table>
                         <tr>
-                            <th>Player 1</th>
-                            <th class='slot'>Open</th>
+                            <th>Organiser</th>
+                            <th id='player1' class='slot'>Open</th>
                         </tr>
                         <tr>
                             <th>Player 2</th>
@@ -49,41 +65,61 @@
                         </tr>
                     </table>
                 </div>
-                <div class='col-sm-4'>
-                    <textarea placeholder="Description of game"></textarea>
-                    <span>Date</span>
-                    <input placeholder="Date">
-                    <br>
-                    <span>Location</span>
-                    <input placeholder="Location">
-                    <br>
-                    <span>Date</span>
-                    <input placeholder="Date">
-                    <br>
-                    <button onclick="reserveSpot()">Reserve</button>
-                    <button onclick="unreserveSpot()">Unreserve</button>
-                    <button onclick="loadReservation()">log reservations</button>
-                </div>
-                <div class='col-sm-4'>
-                    <img src='img/basketball-shot.jpg'>
-                </div>
 
             </div>
             <!--End of row-->
             <div class='row'>
+                <div col-sm-12 id='info'>
+                    <table>
+                        <tr>
+                            <th>Skill level</th>
+                            <th>Blank</th>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <th>Blank</th>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <th>Blank</th>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class='row'>
+                <div col-sm-12>
+                    <p>Description</p>
+                    <P>No description added</P>
+                </div>
 
             </div>
         </div>
         <!-- End of container -->
 
     </section>
-    
+
+    <div class='col-sm-4'>
+
+
+        <button onclick="loadReservation()">log reservations</button>
+        <button onclick="getGame('618debaf4b57201850746776')">Check game info</button>
+
+    </div>
+
+
+    <script src='js/game-page.js'></script>
     <script src="https://accounts.google.com/gsi/client"></script>
     <script>
         // self executing function here
-        (function() {
-           isSignedIn()
-           promptOneTap()
+
+        (function () {
+            isSignedIn()
+            promptOneTap()
+            getGameInfo()
         })();
     </script>
 </body>
