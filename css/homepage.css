@@ -168,11 +168,11 @@ nav img {
 }
 
 /*For the buttons*/
-button {
+/* button {
   margin: 1em 1em;
   width: 1em;
-  height: 2em;
-}
+  height: 3.5em;
+} */
 
 .jumbotron{
   border: 2px solid black;
