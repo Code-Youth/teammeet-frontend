@@ -100,7 +100,7 @@
 } */
 
 #table1 {
-  border-right: 2px solid red;
+  border-right: 2px solid #54222F;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -115,12 +115,16 @@
 }
 
 #findBody {
-  background-color: seashell;
+  background-color: #d6f5ff;
 }
 
 /* CSS for Game Info page */
 
-#game_title {
+#game_info {
+  display: flex;
+}
+
+#Title {
   text-align: center;
 }
 
@@ -129,10 +133,15 @@
 
 #players table {
   border: 1px solid black;
+  width: 100%;
 }
 
 #players table th {
   padding: 3em;
+}
+
+#info table th {
+  padding: 1em;
 }
 
 /* The 'open' text that is next to Players in the table */
@@ -146,7 +155,64 @@ textarea {
   height: 50%;
   justify-content: end;
 }
+
+/*Resizing the picture*/
 img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 80%;
+}
+
+nav img {
+  width: 5%;
+  height: 5%;
+}
+
+/*For the buttons*/
+/* button {
+  margin: 1em 1em;
+  width: 1em;
+  height: 3.5em;
+} */
+
+.jumbotron{
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2em;
+  animation: jumboUnHover .3s    reverse ;
+}
+
+.jumbotron:hover{
+  animation: jumboHover .3s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes jumboHover {
+  0%{
+    transform: translateX(0px) translateY(0px);
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  100%{
+    transform: translateX(10px) translateY(-10px);
+    border-bottom: 10px solid black;
+     border-left: 10px solid black;
+  }
+}
+@keyframes jumboUnHover {
+  0%{
+    transform: translateX(0px) translateY(0px);
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  100%{
+    transform: translateX(10px) translateY(-10px);
+    border-bottom: 10px solid black;
+     border-left: 10px solid black;
+  }
+}
+
+.postImg{
+  display: inline;
 }

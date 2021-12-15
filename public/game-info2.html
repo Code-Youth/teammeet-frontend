@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="js/games.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/google-auth.js"></script>
+    <script src="js/cookies.js"></script> -->
+    <link rel='stylesheet' href='game-info2.css'>
+    <title>Game info</title>
+</head>
+
+<body>
+
+    <div class='grid-container'>
+        <div class='grid-item grid-item-1'>
+            <h1 id='Title'>Sport</h1>
+        </div>
+        <div class='grid-item grid-item-2'>
+            <table>
+                <tr>
+                    <th>Organizer</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <th class='player_label'>Player 1</th>
+                    <th class='player_list'>Open</th>
+                </tr>
+                <tr>
+                    <th class='player_label'>Player 2</th>
+                    <th class='player_list'>Open</th>
+                </tr>
+                <tr>
+                    <th class='player_label'>Player 3</th>
+                    <th class='player_list'>Ooen</th>
+                </tr>
+                <tr>
+                    <th class='player_label'>Player 4</th>
+                    <th class='player_list'>Open</th>
+                </tr>
+            </table>
+
+            <button onclick="reserveSpot()">Reserve</button>
+            <button onclick="unreserveSpot()">Unreserve</button>
+            <button onclick="loadReservation()">log reservations</button>
+            <button onclick="getGameInfo('618debaf4b57201850746776')">Check game info</button>
+
+            <br>
+
+        </div>
+        <div class='grid-item grid-item-2'>
+            <table>
+
+                <tr>
+                    <th class='player_label'>Skill Level</th>
+                    <th class='player_list'>Blank</th>
+                </tr>
+                <tr>
+                    <th class='player_label'>Date</th>
+                    <th class='player_list'>Blank</th>
+                </tr>
+                <tr>
+                    <th class='player_label'>Location</th>
+                    <th class='player_list'>Blank</th>
+                </tr>
+
+            </table>
+
+            <br>
+            <span>Desrciption</span>
+            <span class='player_list' id='description'></span>
+
+
+
+
+        </div>
+        <div class='grid-item grid-item-4'>Grid Item 4: <br>Chat</div>
+        <div class='grid-item grid-item-5'>Grid Item 5:Image</div>
+
+    </div>
+    <script src='js/game-page.js'></script>
+    <!-- <script src='js/games.js'></script> -->
+
+</body>
+
+</html>
