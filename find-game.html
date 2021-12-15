@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
     <link rel="stylesheet" href="css/Find-Game.css">
@@ -13,69 +13,79 @@
     <script src="js/google-auth.js"></script>
 
     <title>Join Game</title>
-    
+
 </head>
 
 <body id="findBody">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <!-- <button onclick="isSignedIn()"> </button> -->
-<div style="background-color: #001B66;">
-    <a href='index.html' id='Teammeet'>
-        <h1>Teameet</h1>
-    </a>
-    <div class="container">
-        <!-- <div class="row"> -->
+    <div style="background-color: #001B66;">
+        <nav>
+            <a href='index.html'>
+                <img src='/img/TeamMeet.png'>
+            </a>
+        </nav>
+
+        <a href='index.html' id='Teammeet'>
+            <h1>Teameet</h1>
+        </a>
+        <div class="container">
+            <!-- <div class="row"> -->
             <div style="display: inline">
-    <input type="text" style="border-radius: 11px; width:10%" id="sportFilter" list='sports' placeholder="Sport">
-                        <datalist id='sports'>
-                            <option value='Soccer'>
-                            <option value='Basketball'>
-                        </datalist>
-                        </div>
-                            <input style="border-radius: 11px; width: 13%; display: inline" id="dateFilterDefault" type="date" placeholder="dd-mm-yyyy">
-                            <p id="dash" style="border-radius: 11px; display:inline; visibility: hidden;">-</p>
-                            <input class="defaultDate" id="dateFilter" type="date" placeholder="dd-mm-yyyy">
-                            <button style="border-radius: 11px; display: inline;" onclick="filterAnim(this)">&gt;</button>
-                            <!--Need to link with skills-->
-                            <div style="display: inline;">
-                                <input style="width: 7em; border: 2px solid black; border-radius: 11px;" type="text" list="sklLevels" id="skillFilter" placeholder="Skill level">
-                                <datalist id="sklLevels">
-                                    <option value="Beginner"></option>
-                                        <option value="Moderate"></option>
-                                            <option value="Advanced"></option>
-                                </datalist>
-                            </div>
-                            <div style="display: inline;">
-                        <button id="filterButton" onclick="buten()">Filter</button>
-                    </div>
-                    <div style="display: inline; float: right;">
-                        <input type="text" list="sortBy" id="sortFunc" placeholder="Sort by Newest">
-                        <datalist id="sortBy">
-                            <option onclick="sortFunction()" value="Sort by Newest"></option>
-                            <option onclick="sortFunction()" value="Sort by earliest games"></option>
-                        </datalist>
-                    </div>
-                    </div>
-                    
-                    <br>
-                    </div>
-                    <br>
-                    <div id="gameDiv">
+                <input type="text" style="border-radius: 11px; width:10%" id="sportFilter" list='sports'
+                    placeholder="Sport">
+                <datalist id='sports'>
+                    <option value='Soccer'>
+                    <option value='Basketball'>
+                </datalist>
+            </div>
+            <input style="border-radius: 11px; width: 13%; display: inline" id="dateFilterDefault" type="date"
+                placeholder="dd-mm-yyyy">
+            <p id="dash" style="border-radius: 11px; display:inline; visibility: hidden;">-</p>
+            <input class="defaultDate" id="dateFilter" type="date" placeholder="dd-mm-yyyy">
+            <button style="border-radius: 11px; display: inline;" onclick="filterAnim(this)">&gt;</button>
+            <!--Need to link with skills-->
+            <div style="display: inline;">
+                <input style="width: 7em; border: 2px solid black; border-radius: 11px;" type="text" list="sklLevels"
+                    id="skillFilter" placeholder="Skill level">
+                <datalist id="sklLevels">
+                    <option value="Beginner"></option>
+                    <option value="Moderate"></option>
+                    <option value="Advanced"></option>
+                </datalist>
+            </div>
+            <div style="display: inline;">
+                <button id="filterButton" onclick="buten()">Filter</button>
+            </div>
+            <div style="display: inline; float: right;">
+                <input type="text" list="sortBy" id="sortFunc" placeholder="Sort by Newest">
+                <datalist id="sortBy">
+                    <option onclick="sortFunction()" value="Sort by Newest"></option>
+                    <option onclick="sortFunction()" value="Sort by earliest games"></option>
+                </datalist>
+            </div>
+        </div>
 
-                    </div>
+        <br>
+    </div>
+    <br>
+    <div id="gameDiv">
+
+    </div>
 
 
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
-   <script>
+    <script>
         // self executing function here
-        (function() {
-           // your page initialization code here
-           // the DOM will be available here
-           loadDefaultGames() 
-            
+        (function () {
+            // your page initialization code here
+            // the DOM will be available here
+            loadDefaultGames()
+
         })();
     </script>
 
 </body>
+
 </html>

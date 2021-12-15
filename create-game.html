@@ -12,8 +12,24 @@
 
     <title>Host</title>
 </head>
+<style>
+    * {
+        background-color: #d6f5ff;
+    }
+
+    textarea {
+        background-color: white;
+    }
+</style>
 
 <body>
+
+
+    <nav>
+        <a href='index.html'>
+            <img src='/img/TeamMeet.png'>
+        </a>
+    </nav>
 
     <!--Title-->
     <section class='pagetop'>
@@ -136,11 +152,11 @@
                 <br>
                 <p id='textCount1'><span id='textCount'>0</span> of 460 characters</p>>
 
-                <style>
+                <!-- <style>
                     #textCount1 {
                         color: #fff;
                     }
-                </style>
+                </style> -->
 
                 <script>
                     function charCount(obj) {
@@ -150,7 +166,10 @@
 
                 <div class="form-group">
                     <div class="col-sm-10">
-                        <button class="btn btn-primary" onclick="addGame()" type="button">Create Game Post</button>
+                        <a href='find-game.html'>
+                            <button class="btn btn-primary" onclick="addGame()" type="button">Create Game Post</button>
+                        </a>
+
                     </div>
                 </div>
             </div>
