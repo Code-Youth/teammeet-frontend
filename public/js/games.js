@@ -52,16 +52,36 @@ function appendGameCard(game) {
     document.body.append(jumbotronDiv)
 }
 */
+function loadDefaultGames(){
+fetch("https://teammeet-backend-app.azurewebsites.net/api/games")
+.then((resp) => resp.json())
+.then(function(data) {
+    let games = data.games
 
-function loadGames() {
+    for (let i = 0; i < games.length; i++) {
+        appendGameCard(games[i])
+    } 
+})
+.catch(function(error) {
+    console.log(error);
+});
+}
 
-    let sport = document.getElementById("sport_filter").value
+function loadGames(x) {
+    if(x == undefined){
+        x = ""
+    }
+    console.log(x)
+    console.log("funcopop")
+    fetch("https://teammeet-backend-app.azurewebsites.net/api/games" + x)
 
-    fetch("https://teammeet-backend-app.azurewebsites.net/api/games?sport=" + sport)
     .then((resp) => resp.json())
     .then(function(data) {
-        let games = data.games
 
+        let games = data.games
+        console.log(document.getElementById("gameDiv").innerHTML)
+        document.getElementById("gameDiv").innerHTML = ""
+        console.log(document.getElementById("gameDiv").innerHTML)
         for (let i = 0; i < games.length; i++) {
             appendGameCard(games[i])
         } 
@@ -70,7 +90,6 @@ function loadGames() {
         console.log(error);
     });
 }
-
 function getGame(game_id) {
 
     //let sport = document.getElementById("sport_filter").value
@@ -79,10 +98,16 @@ function getGame(game_id) {
     .then((resp) => resp.json())
     .then(function(data) {
         let games = data.games
+        console.log(data)
 
-        for (let i = 0; i < games.length; i++) {
-            appendGameCard(games[i])
-        } 
+
+        let player1 = document.querySelector('#player1').innerHTML = games[0].firsName + " " + games[0].lastName
+        console.log(player1)
+        let title = document.querySelector('#Title').innerHTML = games[0].sport
+        // let skillLevel = document.querySelector('#skillLevel').innerHTML = games[0]
+        let date = document.querySelector('#date').innerHTML = games[0].date
+        let location = document.querySelector('#location').innerHTML = games[0].location
+        let description = document.querySelector('#description').innerHTML = games[0].description
     })
     .catch(function(error) {
         console.log(error);
@@ -130,14 +155,14 @@ function appendGameCard(game) {
     var jumboDiv = document.createElement("div")
     jumboDiv.setAttribute("class", "jumbotron")
     var divDov = document.createElement("div")
-    divDov.setAttribute("class", "container border-top border-danger")
+    divDov.setAttribute("class", "container")
     var divRow = document.createElement("div")
     divRow.setAttribute("class", "row")
     var divCol = document.createElement("div")
     divCol.setAttribute("class", "col-md-2")
     var table1 = document.createElement("table")
     table1.setAttribute("class", "table")
-    table1.setAttribute("id", "table1")
+    //table1.setAttribute("id", "table1")
     var thead = document.createElement("thead")
     var tr = document.createElement("tr")
     var thScope = document.createElement("th")
@@ -186,12 +211,16 @@ function appendGameCard(game) {
     // this is where we are hiding an input box!
     var hiddenInput = document.createElement("input")
     hiddenInput.setAttribute("type", "hidden");
-    hiddenInput.setAttribute("value", game._id);
+    hiddenInput.setAttribute("value", game._id); // this is where we....
+
+    // This is what I hope will populate the page with the game info, please work....
+    
     
 
 
 
-    document.body.appendChild(jumboDiv)
+    var gameDiv = document.getElementById("gameDiv")
+    gameDiv.appendChild(jumboDiv)
     jumboDiv.appendChild(divDov)
     divDov.appendChild(divRow)
     divRow.appendChild(divCol)
@@ -227,7 +256,94 @@ function appendGameCard(game) {
 
     var img = document.createElement("img")
     //img.setAttribute("src","art.png")
-    img.setAttribute("class", "test")
-    img.setAttribute("style","width: 300px; height: 180px; display: inline")
+    img.setAttribute("class", "postImg")
+//img.setAttribute("style","width: 300px; height: 180px; display: inline")
     divRow.appendChild(img)
+    console.log(gameDiv)
 }
+
+
+//Want to restructure this to enable multiple filters at the same time
+// function buten(){
+//     var d = new Date()
+//     var dFilter1 = document.getElementById("dateFilterDefault")
+//         var dFilter2 = document.getElementById("dateFilter")
+//     console.log(d)
+//     console.log(d.getFullYear() + "-" + d.getDate() + "-" + d.getMonth())
+//     console.log(document.getElementById("dateFilterDefault").value)
+//     console.log(document.getElementById("sportFilter").value)
+//     if (document.getElementById("sportFilter").value !== ""){
+//     var spFilter = document.getElementById("sportFilter")
+//     loadGames("?sport=" + spFilter.value)
+//             //?sport=Soccer//
+//     }
+//     else if(document.getElementById("dateFilterDefault").value !== "" && document.getElementById("dateFilter").value == ""){
+//         console.log("WANOIWNL")
+//         loadGames("?startDate=" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "&endDate="+dFilter1.value)
+//         console.log(dFilter1.value)
+//     }
+//     else if(document.getElementById("dateFilterDefault").value !== "" && document.getElementById("dateFilter").value !== ""){
+//         loadGames("?startDate=" + dFilter1.value + "&endDate=" + dFilter2.value)
+//     }
+    
+// }
+
+//Restructured Filter button//
+function buten(){
+    var firstParam = 1
+    var filterQuery = "?"
+    if (document.getElementById("sportFilter").value !== ""){
+        filterQuery+= "sport=" + document.getElementById("sportFilter").value
+        firstParam = 0
+    }
+
+if (firstParam !== 1){
+    filterQuery+="&"
+}
+
+
+    var d = new Date()
+    var dFilter1 = document.getElementById("dateFilterDefault")
+        var dFilter2 = document.getElementById("dateFilter")
+    if (dFilter1.value !== "" && dFilter2.value == ""){
+        filterQuery+= "startDate=" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "&&endDate=" + dFilter1.value
+    }
+    else if(dFilter1.value !== "" && dFilter2.value !== ""){
+        filterQuery+= "startDate=" + dFilter1.value + "&endDate=" + dFilter2.value
+    }
+    
+    console.log(filterQuery)
+    loadGames(filterQuery)
+}
+
+
+
+
+//Find game animations//
+function filterAnim(arrow){
+    if(arrow.innerHTML == "&gt;"){
+        arrow.innerHTML = "&lt;"
+        document.getElementById("dash").style.visibility = "visible"
+    document.getElementById("dateFilter").className = "openDateFilter"
+    const animated = document.querySelector('.openDateFilter');
+
+animated.addEventListener('animationend', () => {
+document.getElementById("dateFilter").className = "keepOpenDate"
+
+});
+    }
+    else{
+        arrow.innerHTML = "&gt;"
+        document.getElementById("dash").style.visibility = "hidden"
+
+    document.getElementById("dateFilter").className = "closeDateFilter"
+    console.log(document.getElementsByClassName("closeDateFilter"))
+const animated = document.querySelector('.closeDateFilter');
+
+animated.addEventListener('animationend', () => {
+document.getElementById("dateFilter").className = "defaultDate"
+
+});
+}
+}
+//Find game animations END//

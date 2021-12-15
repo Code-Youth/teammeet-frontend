@@ -5,105 +5,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css' rel='stylesheet'>
-    <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
-
-    <script src="js/games.js"></script>
-    <link rel='stylesheet' href='css/homepage.css'>
-    <title>Teameet</title>
-    
+    <title>Homepage Redesign</title>
+    <link rel='stylesheet' href='css/style.css'>
 </head>
 
+<div class='container'>
+    <nav class='navbar'>
+        <ul>
+            <li><a href='#home'>Home</a></li>
+            <li><a href='#about'>About</a></li>
+            <li><a href='#works'>Getting started</a></li>
+            <li><a href='#create'>Create</a></li>
+            <li><a href='#find'>Find</a></li>
+        </ul>
+    </nav>
+
+    <section id='home'>
+        <h1>Welcome to TeamMeet</h1>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit asperiores provident, voluptate libero
+            deleniti eius?
+        </p> -->
+
+    </section>
+
+    <section id='about'>
+        <h1>What were about</h1>
+        <p>Helping people find the right team mates so everyone of any skill level can have fun playing sports
+        </p>
+
+    </section>
+
+
+    <section id='works'>
+        <h1>How it works</h1>
+        <p>Create a game and post it for others to join or search for a game already started
+        </p>
+
+    </section>
+
+
+    <section id='create'>
+        <h1><a href='create-game.html'>Create a game</a></h1>
+        <p>Start your own game and tailor it to your liking. You can choose the skill level of the game, when and where
+            it be held, and add any other details!
+        </p>
+
+    </section>
+    <section id='find'>
+        <h1><a href='find-game.html'>Find a game</a></h1>
+        <p>Search for a game that matches your criteria. You filter games by skill level, sport, date, and location!
+        </p>
+
+    </section>
+
+</div>
+<!--End of container-->
 
 <body>
-    <div id='background' class='container-flex'>
-
-        <!--Title-->
-        <section class='pagetop'>
-            <div class='container-fluid'>
-                <div class='row'>
-                    <div class='col-sm-12 text-center'>
-                        <a href='index.html' id='Teammeet'>
-                            <h1>Teameet</h1>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End of title-->
-
-        <!--This is the beginning of the nav bar-->
-
-        <!-- <section class='navbar'>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Log in</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href='Create_Game.html'><strong>Post Game</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href='FindGame.html'><strong>Find game</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <br>
-            </nav>
-        </section> -->
-
-        <!--End of navbar-->
-        <br>
-
-        <!--New nav attempt-->
-        <section class='nav_section'>
-            <div class='conatiner'>
-                <div class='row'>
-                    <div class='col-sm-2'>
-                        <a href='create-game.html' class='link'>Post Game</a>
-                    </div>
-                    <div class='col-sm-2'>
-                        <a href='find-game.html' class='link'>Find Game</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <br>
-        <!-- Introduction of our website-->
-        <section class='main_body'>
-            <div class='container'>
-                <div class='row'>
-                    <div class='col-sm-12'>
-                        <div class="jumbotron">
-                            <h1 class="display-4">Sport games for adults of all skill levels!</h1>
-                            <p class="lead">Looking to play sports but worried about skill gaps? Here on Teammeet, we
-                                provide
-                                a platform for people of all skill levels to find games and players that suit their
-                                athletic
-                                preferences. Some people are looking for a casual experience while others want to play
-                                competitively. You can filter your search options to find the right experience for you!
-
-                            </p>
-                            <hr class="my-4">
-                            <p>If you would like more information, feel free to contact us.</p>
-                            <p class="lead">
-                                <a class="btn btn-primary btn-lg" href="#" role="button">Contact</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <!--End of introduction-->
-    </div>
 
 </body>
+
 </html>
+
+<!-- Make smooth scroll
+
+    Show text when container is scrolled: keyword - viewport
+    How do I show text when I scroll down to a particular container
+
+-->

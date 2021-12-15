@@ -4,7 +4,7 @@
 }
 
 body {
-  background: url(../img/stadium-background.jpg) no-repeat;
+  background: url(../img/Stone_background.jpg) no-repeat;
   background-size: cover;
   color: #fff;
 }
@@ -54,4 +54,10 @@ body {
 
 .col-sm-2 {
   font-weight: bold;
+}
+
+
+/*Sport picture*/
+#pic {
+  height: 50%;
 }
