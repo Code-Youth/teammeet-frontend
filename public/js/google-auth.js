@@ -1,6 +1,7 @@
 
 function isSignedIn(){
-    
+   
+
     if (getCookie("token")){
       console.log("you're signed in!")
       return true

@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.6; /* To create some space between lines */
+  height: 100vh; /* So the effects continue when you scroll down, 100vh is the entire screen height*/
+  overflow: hidden; /* Get rid of scroll bar */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  /*CSS smooth scroll*/
+  overflow-y: scroll; /*Bring back the vertical scroll*/
+  scroll-behavior: smooth; /*Makes scrolling smooth*/
+  scroll-snap-type: y mandatory; /*Part 1 to make scroll snap down*/
+}
+
+/* Navbar */
+
+.navbar {
+  position: fixed; /*Nabar stays when scrolling*/
+  top: 0; /*Always stays on top*/
+  z-index: 1; /*ALways above the other content*/
+  display: flex; /*Have to learn about flexbox*/
+  width: 100%;
+  height: 60px; /*Don't know why he did this*/
+  background: rgb(0, 0, 0, 0.7); /*The '0.7' gives it transparecy*/
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none; /*No bullets*/
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 1em; /*Create space between*/
+  padding: 1rem; /*Create space around*/
+}
+
+.navbar ul li a {
+  text-decoration: none; /*No underline*/
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.navbar ul li a:hover {
+  color: skyblue;
+}
+
+/* End of Navbar */
+
+/* Sections basic edit */
+
+section {
+  display: flex;
+  flex-direction: column; /*On top of each other, not side by side*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center; /*Part 2 of scroll snap down*/
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+section p {
+  font-size: 1.5rem;
+}
+
+/* Move writing up so it's not in the white background */
+#home h1 {
+  margin-bottom: 200px;
+}
+
+/* So I can have two lines and not one long line that will push into the white background */
+#create p {
+  width: 50%;
+}
+
+/* Removing underling and color from the link */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Adding an effect when mouse is over the link */
+a:hover {
+  color: skyblue;
+}
+
+/* Section background pics */
+section#home {
+  background: url(/Img/TeamMeet_Volleyball.jpg) no-repeat center center/cover;
+}
+
+section#about {
+  background: url(/img/TeamMeet_Tennis\ ball.jpg) no-repeat center center/cover;
+}
+
+section#works {
+  background: url(/img/michele-feola--t40mnV3vAU-unsplash_Tennis.jpg) no-repeat
+    center center/cover;
+}
+
+section#create {
+  background: url(/img/TeamMeet_Basketball\ Court.jpg) no-repeat center
+    center/cover;
+}
+section#find {
+  background: url(/img/TeamMeet_Soccer\ Field.jpg) no-repeat center center/cover;
+}
+
+/*Hide scroll bar*/
+::-webkit-scrollbar {
+  display: none;
+}
