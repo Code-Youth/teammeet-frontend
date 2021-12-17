@@ -100,18 +100,17 @@
 } */
 
 #table1 {
+<<<<<<< Updated upstream
   border-right: 2px solid red;
+=======
+  border-right: 2px solid #54222f;
+>>>>>>> Stashed changes
 }
 
 @media only screen and (max-width: 1400px) {
   .test {
     visibility: hidden;
   }
-}
-
-.joinButton {
-  color: black;
-  text-decoration: none;
 }
 
 #findBody {
@@ -147,6 +146,27 @@ textarea {
   justify-content: end;
 }
 img {
+<<<<<<< Updated upstream
   width: 100%;
   height: auto;
+=======
+  width: 80%;
+  height: 80%;
+}
+
+nav img {
+  width: 5%;
+  height: 5%;
+}
+
+/*For the buttons*/
+/* button {
+  margin: 1em 1em;
+  width: 1em;
+  height: 3.5em;
+} */
+
+.postImg {
+  display: inline;
+>>>>>>> Stashed changes
 }

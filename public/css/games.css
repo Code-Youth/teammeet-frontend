@@ -4,13 +4,17 @@
 }
 
 body {
+<<<<<<< Updated upstream
   background: url(../img/stadium-background.jpg) no-repeat;
   background-size: cover;
   color: #fff;
+=======
+  background-color: #d6f5ff;
+>>>>>>> Stashed changes
 }
 
 .col-sm-2 {
-  color: #fff;
+  color: black;
 }
 
 .form-group {
@@ -34,7 +38,7 @@ body {
 }
 
 #Descrip_title {
-  color: #fff;
+  color: black;
   font-weight: bold;
 }
 
@@ -55,3 +59,17 @@ body {
 .col-sm-2 {
   font-weight: bold;
 }
+<<<<<<< Updated upstream
+=======
+
+/*Sport picture*/
+#pic {
+  height: 50%;
+}
+
+/* The Team Meet logo */
+nav img {
+  width: 5%;
+  height: 5%;
+}
+>>>>>>> Stashed changes
