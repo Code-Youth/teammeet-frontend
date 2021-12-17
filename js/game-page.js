@@ -16,8 +16,10 @@ function getGameInfo() {
         // console.log(player1)
         let title = document.querySelector('#Title').innerHTML = games[0].sport
         // let skillLevel = document.querySelector('#skillLevel').innerHTML = games[0]
-        document.querySelector('#date').innerHTML = games[0].date
-        console.log(date)
+        document.querySelector('#date_info').innerHTML = games[0].date
+        console.log(games)
+        document.querySelector('#skill').innerHTML = games[0].skill
+
         let location = document.querySelector('#location').innerHTML = games[0].location
         let description = document.querySelector('#description').innerHTML = games[0].description
 
