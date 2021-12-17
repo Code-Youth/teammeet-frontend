@@ -435,7 +435,7 @@ function buten(){
 if (firstParam !== 1){
     filterQuery+="&"
 }
-        filterQuery+= "startDate=" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "&&endDate=" + dFilter1.value
+        filterQuery+= "startDate=" + d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + "&endDate=" + dFilter1.value
     }
     else if(dFilter1.value !== "" && dFilter2.value !== ""){
  //if by this line there is another filter active adds & to the filter
