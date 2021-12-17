@@ -1,57 +1,57 @@
 /* Find game animations */
-.defaultDate{
-    width: 0%;
-    display: inline; 
-    visibility: hidden;
-  }
-  .closedDate{
-    width: 0%;
-    display: inline; 
-    visibility: hidden;
-  }
-  .openDateFilter{
-    border-radius: 11px;
-    display: inline; 
-    visibility: visible;
-    animation: openDate .2s ease-in 1;
-    transform-origin: 0% 100%;
-  }
-  .keepOpenDate{
-    border-radius: 11px;
-    display: inline; 
-    visibility: visible;
-    animation: openDate .2s ease-in 1;
-    transform-origin: 0% 100%;
-  }
-  .closeDateFilter{
-    border-radius: 11px;
-    display: inline; 
-    visibility: visible;
-    animation: closeDate .2s ease-in 1;
-    transform-origin: 50% 0% 0%;
-  }
-  @keyframes openDate {
-    0%{
-        transform: scalex(0);
-    }
-    100%{
-        transform: scaleX(1);
-    }
-  }
-  @keyframes closeDate {
-    0%{
-        transform: scaleX(1);
-    }
-    100%{
-        transform: scaleX(0);
-    }
-  }
-  #filterButton{
-    border-radius: 11px;
-    width: 3em;
-  }
-  /* Find game animations END*/
 
+.defaultDate {
+  width: 0%;
+  display: inline;
+  visibility: hidden;
+}
+.closedDate {
+  width: 0%;
+  display: inline;
+  visibility: hidden;
+}
+.openDateFilter {
+  border-radius: 11px;
+  display: inline;
+  visibility: visible;
+  animation: openDate 0.2s ease-in 1;
+  transform-origin: 0% 100%;
+}
+.keepOpenDate {
+  border-radius: 11px;
+  display: inline;
+  visibility: visible;
+  animation: openDate 0.2s ease-in 1;
+  transform-origin: 0% 100%;
+}
+.closeDateFilter {
+  border-radius: 11px;
+  display: inline;
+  visibility: visible;
+  animation: closeDate 0.2s ease-in 1;
+  transform-origin: 50% 0% 0%;
+}
+@keyframes openDate {
+  0% {
+    transform: scalex(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes closeDate {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+#filterButton {
+  border-radius: 11px;
+  width: 3em;
+}
+/* Find game animations END*/
 
   .jumbotron {
     border: 2px solid black;
@@ -90,7 +90,6 @@
     border-bottom: 2px solid black;
   }
   
-
   .joinButton{
     text-decoration: none;
     color: white;
@@ -109,18 +108,6 @@
     display: inline-table;
   }
   @keyframes jumboHover {
-    0% {
-      transform: translateX(0px) translateY(0px);
-      border-left: 2px solid black;
-      border-bottom: 2px solid black;
-    }
-    100% {
-      transform: translateX(10px) translateY(-10px);
-      border-bottom: 10px solid black;
-      border-left: 10px solid black;
-    }
-  }
-  @keyframes jumboUnHover {
     0% {
       transform: translateX(0px) translateY(0px);
       border-left: 2px solid black;

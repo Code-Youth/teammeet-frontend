@@ -10,13 +10,14 @@ function getGameInfo() {
     .then((resp) => resp.json())
     .then(function(data) {
         let games = data.games
-        console.log(games)
-
+        // console.log(games)
+        console.log(games[0].date)
         let player1 = document.querySelector('#player1').innerHTML = games[0].firsName + " " + games[0].lastName
-        console.log(player1)
+        // console.log(player1)
         let title = document.querySelector('#Title').innerHTML = games[0].sport
         // let skillLevel = document.querySelector('#skillLevel').innerHTML = games[0]
-        let date = document.querySelector('#date').innerHTML = games[0].date
+        document.querySelector('#date').innerHTML = games[0].date
+        console.log(date)
         let location = document.querySelector('#location').innerHTML = games[0].location
         let description = document.querySelector('#description').innerHTML = games[0].description
 

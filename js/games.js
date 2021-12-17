@@ -102,10 +102,12 @@ function getGame(game_id) {
 
 
         let player1 = document.querySelector('#player1').innerHTML = games[0].firsName + " " + games[0].lastName
-        console.log(player1)
+        // console.log(player1)
         let title = document.querySelector('#Title').innerHTML = games[0].sport
         // let skillLevel = document.querySelector('#skillLevel').innerHTML = games[0]
         let date = document.querySelector('#date').innerHTML = games[0].date
+        console.log(games + "Games")
+        console.log(date + "date")
         let location = document.querySelector('#location').innerHTML = games[0].location
         let description = document.querySelector('#description').innerHTML = games[0].description
     })
@@ -114,7 +116,10 @@ function getGame(game_id) {
     });
 }
 
+
 function addGame() {
+
+let btn = document.querySelector('#create_btn')
 
     let firstName = document.getElementById("first_name").value
     let lastName = document.getElementById("last_name").value
@@ -143,6 +148,11 @@ function addGame() {
         }).then(res => {
             console.log("Request complete! response:", res);
         });
+
+       
+
+        window.history.pushState('page2', 'Title', '/find-game.html') // This changes the url to the "find-game" page
+        window.location.reload(); // This reloads the page, need it so it will change to the find game
     }
     else{
         console.log(description.length)
