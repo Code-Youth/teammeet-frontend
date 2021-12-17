@@ -176,3 +176,8 @@ nav img {
 .postImg {
   display: inline;
 }
+
+/* Game info font */
+.no_bold {
+  font-weight: normal;
+}
