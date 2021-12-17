@@ -51,6 +51,10 @@
   color: white;
 }
 
+#blue_back {
+  height: 80px;
+}
+
 .link {
   text-decoration: none;
   color: white;

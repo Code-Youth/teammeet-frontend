@@ -1,0 +1,178 @@
+.table_header {
+  color: red;
+}
+
+#Teammeet {
+  color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+  font-size: 100%;
+  text-align: center;
+}
+
+#Teammeet:hover {
+  color: darkolivegreen;
+}
+
+/* .container {
+  border: solid red;
+} */
+
+.col-md-6 {
+  border: solid blue;
+}
+
+.text {
+  text-align: center;
+}
+
+* {
+  background-color: none;
+  margin: 0;
+  padding: 0;
+}
+
+#background {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/sports-homepage.jpeg);
+  background-position: center;
+  background-size: cover;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.main_body {
+  color: white;
+}
+
+.nav_section {
+  color: white;
+}
+
+#blue_back {
+  height: 80px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.link:hover {
+  color: red;
+  font-size: 1.7em;
+}
+/*
+#soccer_pic {
+  width: auto;
+  height: auto;
+}
+*/
+#Log:hover {
+  color: #4caf50;
+}
+
+#Sign:hover {
+  color: red;
+}
+
+.Top_bt {
+  background-color: #008cba;
+  color: white;
+}
+
+#find {
+  color: white;
+  background-color: #008cba;
+  text-decoration: none;
+}
+
+#find:hover {
+  color: red;
+}
+
+/* .col-sm-1 {
+  border: red;
+} */
+
+/* .col-md-6 {
+  border: solid red;
+} */
+
+#table1 {
+  border-right: 2px solid #54222f;
+}
+
+@media only screen and (max-width: 1400px) {
+  .test {
+    visibility: hidden;
+  }
+}
+
+#findBody {
+  background-color: #d6f5ff;
+}
+
+/* CSS for Game Info page */
+
+#game_info {
+  display: flex;
+}
+
+#Title {
+  text-align: center;
+}
+
+#players {
+}
+
+#players table {
+  border: 1px solid black;
+  width: 100%;
+}
+
+#players table th {
+  padding: 3em;
+}
+
+#info table th {
+  padding: 1em;
+}
+
+/* The 'open' text that is next to Players in the table */
+.slot {
+  color: grey;
+}
+
+/* Make description box bigger */
+textarea {
+  width: 100%;
+  height: 50%;
+  justify-content: end;
+}
+
+/*Resizing the picture*/
+img {
+  width: 80%;
+  height: 80%;
+}
+
+nav img {
+  width: 5%;
+  height: 5%;
+}
+
+/*For the buttons*/
+/* button {
+  margin: 1em 1em;
+  width: 1em;
+  height: 3.5em;
+} */
+
+.postImg {
+  display: inline;
+}
