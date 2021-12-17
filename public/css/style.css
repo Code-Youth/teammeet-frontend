@@ -101,24 +101,24 @@ a:hover {
 
 /* Section background pics */
 section#home {
-  background: url(/Img/TeamMeet_Volleyball.jpg) no-repeat center center/cover;
+  background: url(Img/TeamMeet_Volleyball.jpg) no-repeat center center/cover;
 }
 
 section#about {
-  background: url(/img/TeamMeet_Tennis\ ball.jpg) no-repeat center center/cover;
+  background: url(img/TeamMeet_Tennis\ ball.jpg) no-repeat center center/cover;
 }
 
 section#works {
-  background: url(/img/michele-feola--t40mnV3vAU-unsplash_Tennis.jpg) no-repeat
+  background: url(img/michele-feola--t40mnV3vAU-unsplash_Tennis.jpg) no-repeat
     center center/cover;
 }
 
 section#create {
-  background: url(/img/TeamMeet_Basketball\ Court.jpg) no-repeat center
+  background: url(img/TeamMeet_Basketball\ Court.jpg) no-repeat center
     center/cover;
 }
 section#find {
-  background: url(/img/TeamMeet_Soccer\ Field.jpg) no-repeat center center/cover;
+  background: url(img/TeamMeet_Soccer\ Field.jpg) no-repeat center center/cover;
 }
 
 /*Hide scroll bar*/
