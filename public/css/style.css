@@ -96,6 +96,7 @@ a {
 
 /* Adding an effect when mouse is over the link */
 a:hover {
+  color: skyblue;
 }
 
 /* Section background pics */
