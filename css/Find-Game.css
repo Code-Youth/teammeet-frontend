@@ -1,121 +1,134 @@
 /* Find game animations */
-
-.defaultDate {
+.defaultDate{
   width: 0%;
-  display: inline;
+  display: inline; 
   visibility: hidden;
 }
-.closedDate {
+.closedDate{
   width: 0%;
-  display: inline;
+  display: inline; 
   visibility: hidden;
 }
-.openDateFilter {
+.openDateFilter{
   border-radius: 11px;
-  display: inline;
+  display: inline; 
   visibility: visible;
-  animation: openDate 0.2s ease-in 1;
+  animation: openDate .2s ease-in 1;
   transform-origin: 0% 100%;
 }
-.keepOpenDate {
+.keepOpenDate{
   border-radius: 11px;
-  display: inline;
+  display: inline; 
   visibility: visible;
-  animation: openDate 0.2s ease-in 1;
+  animation: openDate .2s ease-in 1;
   transform-origin: 0% 100%;
 }
-.closeDateFilter {
+.closeDateFilter{
   border-radius: 11px;
-  display: inline;
+  display: inline; 
   visibility: visible;
-  animation: closeDate 0.2s ease-in 1;
+  animation: closeDate .2s ease-in 1;
   transform-origin: 50% 0% 0%;
 }
 @keyframes openDate {
-  0% {
-    transform: scalex(0);
+  0%{
+      transform: scalex(0);
   }
-  100% {
-    transform: scaleX(1);
+  100%{
+      transform: scaleX(1);
   }
 }
 @keyframes closeDate {
-  0% {
-    transform: scaleX(1);
+  0%{
+      transform: scaleX(1);
   }
-  100% {
-    transform: scaleX(0);
+  100%{
+      transform: scaleX(0);
   }
 }
-#filterButton {
+#filterButton{
   border-radius: 11px;
   width: 3em;
 }
 /* Find game animations END*/
 
-  .jumbotron {
-    border: 2px solid black;
-    border-radius: 25px;
-    width: 60%;
-    height: 15em;
-    margin: auto;
-    margin-bottom: 2em;
-    animation: jumboUnHover 0.3s reverse;
-  }
-  
-  .jumbotron:hover {
-    animation: jumboHover 0.3s;
-    animation-fill-mode: forwards;
-  }
 
-  .aboutTable{
-    width: 20%;
-    height: 100%; 
-    /* border: 3px solid red;  */
-    display: inline-table;
-  }
+.jumbotron {
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 60%;
+  height: 15em;
+  margin: auto;
+  margin-bottom: 2em;
+  animation: jumboUnHover 0.3s reverse;
+}
 
-  .aboutTable tr{
-    border-bottom: 1px solid black;
-  }
+.jumbotron:hover {
+  animation: jumboHover 0.3s;
+  animation-fill-mode: forwards;
+}
 
-  .aboutH{
-    font-size: x-large;
-    border-right: 2px solid black;
+.aboutTable{
+  width: 20%;
+  height: 100%; 
+  /* border: 3px solid red;  */
+  display: inline-table;
+}
+
+.aboutTable tr{
+  border-bottom: 1px solid black;
+}
+
+.aboutH{
+  font-size: x-large;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.descH{
+  font-size: x-large;
+  border-bottom: 2px solid black;
+}
+
+
+.joinButton{
+  text-decoration: none;
+  color: white;
+  background-color: #001B66;
+  text-align: center;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+.joinTr{
+  border-bottom: 0px solid white !important;
+}
+.descTable{
+  width: 60%;
+  height: 100%;
+  /* border: 3px solid red;  */
+  display: inline-table;
+}
+@keyframes jumboHover {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    border-left: 2px solid black;
     border-bottom: 2px solid black;
   }
-  
-  .descH{
-    font-size: x-large;
+  100% {
+    transform: translateX(10px) translateY(-10px);
+    border-bottom: 10px solid black;
+    border-left: 10px solid black;
+  }
+}
+@keyframes jumboUnHover {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    border-left: 2px solid black;
     border-bottom: 2px solid black;
   }
-  
-  .joinButton{
-    text-decoration: none;
-    color: white;
-    background-color: #001B66;
-    text-align: center;
-    border-bottom-left-radius: 11px;
-    border-bottom-right-radius: 11px;
+  100% {
+    transform: translateX(10px) translateY(-10px);
+    border-bottom: 10px solid black;
+    border-left: 10px solid black;
   }
-  .joinTr{
-    border-bottom: 0px solid white !important;
-  }
-  .descTable{
-    width: 60%;
-    height: 100%;
-    /* border: 3px solid red;  */
-    display: inline-table;
-  }
-  @keyframes jumboHover {
-    0% {
-      transform: translateX(0px) translateY(0px);
-      border-left: 2px solid black;
-      border-bottom: 2px solid black;
-    }
-    100% {
-      transform: translateX(10px) translateY(-10px);
-      border-bottom: 10px solid black;
-      border-left: 10px solid black;
-    }
-  }
+}
