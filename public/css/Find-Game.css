@@ -134,17 +134,42 @@
 }
 
 @media only screen and (max-width: 700px){
-  body{
-    background-color: red;
-  }
 
   .jumbotron {
     border: 2px solid black;
     border-radius: 25px;
-    width: 100%;
+    width: 99%;
     height: auto;
     margin: auto;
     margin-bottom: 2em;
     animation: jumboUnHover 0.3s reverse;
 }
+@keyframes jumboHover {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    border-bottom: 2px solid black;
+  }
+  100% {
+    transform: translateY(-10px);
+    border-bottom: 10px solid black;
+  }
+}
+@keyframes jumboUnHover {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    border-bottom: 2px solid black;
+  }
+  100% {
+    transform:  translateY(-10px);
+    border-bottom: 10px solid black;
+  }
+}
+#findBody {
+  background-color: #d6f5ff;
+  overflow-x: hidden;
+}
+}
+#findBody {
+  background-color: #d6f5ff;
+  overflow-x: hidden;
 }
